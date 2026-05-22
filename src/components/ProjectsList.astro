@@ -1,28 +1,48 @@
-<section id="otros-proyectos" class="relative max-w-7xl mx-auto py-24 px-6 md:px-12 border-t border-white/5">
+---
+import { Search } from "@lucide/astro";
+
+const externalLinkSvg = `<svg class="h-4 w-4 stroke-current" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>`;
+---
+
+<section
+  id="otros-proyectos"
+  class="relative max-w-7xl mx-auto py-24 px-6 md:px-12 border-t border-white/5"
+  data-external-icon={externalLinkSvg}
+>
   <div class="space-y-12">
-    
     <!-- Section Header -->
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-6 scroll-reveal">
+    <div
+      class="flex flex-col md:flex-row md:items-center justify-between gap-6 scroll-reveal"
+    >
       <div class="space-y-4">
-        <span class="text-xs uppercase tracking-[0.2em] font-medium text-violet-400 font-mono">Índice de Repositorios</span>
-        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white">Directorio de código</h2>
-        <p class="text-neutral-400 font-light leading-relaxed max-w-xl text-sm md:text-base">
-          Busca y filtra entre mis otros repositorios. Contiene desde utilidades del sistema y simuladores matemáticos hasta desarrollos académicos completos.
+        <span
+          class="text-xs uppercase tracking-[0.2em] font-medium text-violet-400 font-mono"
+          >Índice de Repositorios</span
+        >
+        <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-white">
+          Directorio de código
+        </h2>
+        <p
+          class="text-neutral-400 font-light leading-relaxed max-w-xl text-sm md:text-base"
+        >
+          Busca y filtra entre mis otros repositorios. Contiene desde utilidades
+          del sistema y simuladores matemáticos hasta desarrollos académicos
+          completos.
         </p>
       </div>
-      
+
       <!-- Search Input -->
       <div class="w-full md:w-auto shrink-0">
         <div class="relative">
-          <span class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-neutral-500">
-            <svg class="h-4 w-4 stroke-current" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
+          <span
+            class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-neutral-500"
+          >
+            <Search class="h-4 w-4 stroke-current" strokeWidth="2" />
           </span>
-          <input 
-            type="text" 
-            id="project-search" 
-            placeholder="Buscar por lenguaje, framework o palabra clave..." 
+          <input
+            type="text"
+            id="project-search"
+            placeholder="Buscar por lenguaje, framework o palabra clave..."
             class="w-full md:w-80 bg-white/2 border border-white/10 rounded-full pl-11 pr-6 py-3 text-sm text-white focus:outline-none focus:border-violet-500 focus:bg-white/4 transition-all placeholder:text-neutral-500 font-light"
           />
         </div>
@@ -31,25 +51,46 @@
 
     <!-- Filter Pills -->
     <div class="flex flex-wrap gap-2 scroll-reveal" id="filters-container">
-      <button class="filter-pill active px-4 py-1.5 rounded-full text-xs font-mono border border-white/10 bg-white/5 text-white hover:border-white/20 transition-all cursor-pointer" data-filter="all">
+      <button
+        class="filter-pill active px-4 py-1.5 rounded-full text-xs font-mono border border-white/10 bg-white/5 text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="all"
+      >
         Todos
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="React">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="React"
+      >
         React
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="Laravel">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="Laravel"
+      >
         Laravel
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="Python">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="Python"
+      >
         Python
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="C#">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="C#"
+      >
         C# / .NET
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="Java">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="Java"
+      >
         Java
       </button>
-      <button class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer" data-filter="OpenGL">
+      <button
+        class="filter-pill px-4 py-1.5 rounded-full text-xs font-mono border border-white/5 bg-transparent text-neutral-400 hover:text-white hover:border-white/20 transition-all cursor-pointer"
+        data-filter="OpenGL"
+      >
         C++ / OpenGL
       </button>
     </div>
@@ -57,7 +98,9 @@
     <!-- Projects List Container -->
     <div class="scroll-reveal min-h-[200px]">
       <!-- Header row for Large screens -->
-      <div class="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-white/10 text-xs uppercase tracking-wider font-mono text-neutral-300">
+      <div
+        class="hidden md:grid grid-cols-12 gap-4 px-6 py-4 border-b border-white/10 text-xs uppercase tracking-wider font-mono text-neutral-300"
+      >
         <div class="col-span-3">Proyecto</div>
         <div class="col-span-6">Descripción</div>
         <div class="col-span-2">Tecnologías</div>
@@ -70,11 +113,13 @@
       </div>
 
       <!-- No Results State -->
-      <div id="no-results" class="hidden py-16 text-center text-neutral-500 font-mono text-sm">
+      <div
+        id="no-results"
+        class="hidden py-16 text-center text-neutral-500 font-mono text-sm"
+      >
         No se encontraron proyectos que coincidan con la búsqueda.
       </div>
     </div>
-
   </div>
 </section>
 
@@ -91,45 +136,51 @@
   const projectsData: Project[] = [
     {
       name: "DatposSystem",
-      description: "Sistema comercial completo para administrar productos, listas de precios, turnos de caja y sucursales.",
+      description:
+        "Sistema comercial completo para administrar productos, listas de precios, turnos de caja y sucursales.",
       tech: ["Laravel", "React", "Transact-SQL", "Tailwind"],
       url: "https://github.com/break-dev/DatposSystem",
-      category: "Laravel"
+      category: "Laravel",
     },
     {
       name: "PolladaPe",
-      description: "Videojuego móvil de sabotaje y estrategia con temática peruana y físicas de peso ('empacho') del personaje.",
+      description:
+        "Videojuego móvil de sabotaje y estrategia con temática peruana y físicas de peso ('empacho') del personaje.",
       tech: ["React Native", "Expo", "TypeScript"],
       url: "https://github.com/break-dev/PolladaPe",
-      category: "React"
+      category: "React",
     },
     {
       name: "Hakuna",
-      description: "Frontend y API REST/WebSocket para una red social híbrida enfocada en simplicidad y tiempo real.",
+      description:
+        "Frontend y API REST/WebSocket para una red social híbrida enfocada en simplicidad y tiempo real.",
       tech: ["NestJS", "React", "TypeScript", "WebSockets"],
       url: "https://github.com/break-dev/Hakuna",
-      category: "React"
+      category: "React",
     },
     {
       name: "BeatAI",
-      description: "Sistema de reconocimiento facial ultra rápido (0.04s - 0.2s) con integración IoT, base de datos y envío de correos.",
+      description:
+        "Sistema de reconocimiento facial ultra rápido (0.04s - 0.2s) con integración IoT, base de datos y envío de correos.",
       tech: ["Python", "OpenCV", "SQLite", "IoT"],
       url: "https://github.com/break-dev/BeatAI",
-      category: "Python"
+      category: "Python",
     },
     {
       name: "Planbie",
-      description: "Sistema de escritorio para monitoreo y lectura en tiempo real de sensores ambientales y salud de cultivos.",
+      description:
+        "Sistema de escritorio para monitoreo y lectura en tiempo real de sensores ambientales y salud de cultivos.",
       tech: ["C#", "WPF", ".NET 8.0", "IoT"],
       url: "https://github.com/break-dev/Planbie",
-      category: "C#"
+      category: "C#",
     },
     {
       name: "Flappy",
-      description: "ERP web para la gestión integral de inventarios, ventas y operaciones comerciales de Puntos de Venta.",
+      description:
+        "ERP web para la gestión integral de inventarios, ventas y operaciones comerciales de Puntos de Venta.",
       tech: ["Laravel", "React", "SQLServer", "Tailwind"],
       url: "https://github.com/break-dev/Flappy",
-      category: "Laravel"
+      category: "Laravel",
     },
     // {
     //   name: "Dijkstra",
@@ -140,17 +191,19 @@
     // },
     {
       name: "Boki (BuccalMedic)",
-      description: "ERP de gestión odontológica en arquitectura de tres capas para administración de pacientes, citas y tratamientos.",
+      description:
+        "ERP de gestión odontológica en arquitectura de tres capas para administración de pacientes, citas y tratamientos.",
       tech: ["C#", ".NET Framework", "WinForms", "SQL Server"],
       url: "https://github.com/break-dev/Boki",
-      category: "C#"
+      category: "C#",
     },
     {
       name: "ClubSoda",
-      description: "Plataforma e-commerce optimizada para la empresa panificadora San Jorge, con carrito persistente y filtros avanzados.",
+      description:
+        "Plataforma e-commerce optimizada para la empresa panificadora San Jorge, con carrito persistente y filtros avanzados.",
       tech: ["React", "TypeScript", "Tailwind v4", "Framer Motion"],
       url: "https://github.com/break-dev/ClubSoda",
-      category: "React"
+      category: "React",
     },
     // {
     //   name: "SnackFlow",
@@ -161,17 +214,19 @@
     // },
     {
       name: "BobitoEsponja",
-      description: "Entorno interactivo 3D que recrea Fondo de Bikini. Desarrollé el render de la isla inicial, shaders de agua y palmeras.",
+      description:
+        "Entorno interactivo 3D que recrea Fondo de Bikini. Desarrollé el render de la isla inicial, shaders de agua y palmeras.",
       tech: ["C++", "OpenGL 3.3", "GLSL Shaders"],
       url: "https://github.com/break-dev/BobitoEsponja",
-      category: "OpenGL"
+      category: "OpenGL",
     },
     {
       name: "MemoryKings",
-      description: "Aplicación web de comercio electrónico en Java EE 8 para la venta de tecnología con soporte de tickets integrado.",
+      description:
+        "Aplicación web de comercio electrónico en Java EE 8 para la venta de tecnología con soporte de tickets integrado.",
       tech: ["Java EE 8", "JPA/EclipseLink", "MySQL", "JSP", "Tomcat"],
       url: "https://github.com/break-dev/MemoryKings",
-      category: "Java"
+      category: "Java",
     },
     // {
     //   name: "Homeless",
@@ -182,17 +237,19 @@
     // },
     {
       name: "APIMail",
-      description: "API de microservicio para despacho de notificaciones automáticas por correo electrónico.",
+      description:
+        "API de microservicio para despacho de notificaciones automáticas por correo electrónico.",
       tech: ["Python", "FastAPI", "Google Cloud"],
       url: "https://github.com/break-dev/APIMail",
-      category: "Python"
+      category: "Python",
     },
     {
       name: "GraphRoad",
-      description: "Visualizador y analizador interactivo de grafos complejos y algoritmos de optimización de rutas.",
+      description:
+        "Visualizador y analizador interactivo de grafos complejos y algoritmos de optimización de rutas.",
       tech: ["C#", "WPF", "Algorithms", "Graph Theory"],
       url: "https://github.com/break-dev/GraphRoad",
-      category: "C#"
+      category: "C#",
     },
     // {
     //   name: "Vendetta",
@@ -220,31 +277,15 @@
   let searchQuery = "";
   let activeFilter = "all";
 
+  const externalIconSvg = document.getElementById("otros-proyectos")?.getAttribute("data-external-icon") ?? "";
   const searchInput = document.getElementById("project-search") as HTMLInputElement;
   const listContainer = document.getElementById("projects-list");
   const noResultsDiv = document.getElementById("no-results");
   const filterButtons = document.querySelectorAll(".filter-pill");
 
-  function renderProjects() {
+  function applyResults(filtered: Project[]) {
     if (!listContainer) return;
 
-    // Filter projects
-    const filtered = projectsData.filter(proj => {
-      const matchesSearch = 
-        proj.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        proj.tech.some(t => t.toLowerCase().includes(searchQuery.toLowerCase()));
-
-      const matchesFilter = 
-        activeFilter === "all" || 
-        proj.category === activeFilter ||
-        (activeFilter === "C#" && proj.category === "C#") ||
-        (activeFilter === "OpenGL" && proj.category === "OpenGL");
-
-      return matchesSearch && matchesFilter;
-    });
-
-    // Render results
     if (filtered.length === 0) {
       listContainer.innerHTML = "";
       noResultsDiv?.classList.remove("hidden");
@@ -253,44 +294,69 @@
 
     noResultsDiv?.classList.add("hidden");
 
-    listContainer.innerHTML = filtered.map(proj => `
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-4 px-4 md:px-6 py-6 md:py-5 items-center hover:bg-white/[0.01] transition-all duration-300 group">
-        <!-- Project Name & Category -->
+    listContainer.innerHTML = filtered
+      .map(
+        (proj) => `
+      <div class="project-row grid grid-cols-1 md:grid-cols-12 gap-4 px-4 md:px-6 py-6 md:py-5 items-center hover:bg-white/1 transition-all duration-300 group border-b border-white/5 last:border-0">
         <div class="col-span-12 md:col-span-3 flex flex-col gap-1">
-          <span class="text-base font-bold text-white group-hover:text-lime-400 transition-colors tracking-tight flex items-center gap-2">
+          <span class="text-base font-bold text-white group-hover:text-lime-400 transition-colors tracking-tight">
             ${proj.name}
           </span>
           <span class="text-[10px] uppercase font-mono tracking-wider text-neutral-400">
-            ${proj.category === 'OpenGL' ? 'C++' : proj.category}
+            ${proj.category === "OpenGL" ? "C++" : proj.category}
           </span>
         </div>
-
-        <!-- Description -->
         <div class="col-span-12 md:col-span-6 text-sm text-neutral-300 font-light leading-relaxed">
           ${proj.description}
         </div>
-
-        <!-- Tags -->
         <div class="col-span-12 md:col-span-2 flex flex-wrap gap-1.5">
-          ${proj.tech.map(t => `<span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 border border-white/5 text-neutral-300">${t}</span>`).join('')}
+          ${proj.tech
+            .map(
+              (t) =>
+                `<span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 border border-white/5 text-neutral-300">${t}</span>`,
+            )
+            .join("")}
         </div>
-
-        <!-- External Link -->
-        <div class="col-span-12 md:col-span-1 text-right flex md:justify-end justify-start mt-2 md:mt-0">
-          <a 
-            href="${proj.url}" 
-            target="_blank" 
-            rel="noopener noreferrer" 
+        <div class="col-span-12 md:col-span-1 flex md:justify-end justify-start mt-2 md:mt-0">
+          <a href="${proj.url}" target="_blank" rel="noopener noreferrer"
             class="inline-flex h-8 w-8 items-center justify-center rounded-full bg-white/5 border border-white/10 text-neutral-400 hover:text-white hover:border-white/20 transition-all hover:scale-105"
-            title="Ver código en GitHub"
+            title="Ver en GitHub"
           >
-            <svg class="h-4 w-4 stroke-current" fill="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" stroke="currentColor" />
-            </svg>
+            ${externalIconSvg}
           </a>
         </div>
       </div>
-    `).join('');
+    `,
+      )
+      .join("");
+  }
+
+  function renderProjects() {
+    if (!listContainer) return;
+
+    const filtered = projectsData.filter((proj) => {
+      const matchesSearch =
+        proj.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        proj.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        proj.tech.some((t) =>
+          t.toLowerCase().includes(searchQuery.toLowerCase()),
+        );
+
+      const matchesFilter =
+        activeFilter === "all" ||
+        proj.category === activeFilter ||
+        (activeFilter === "C#" && proj.category === "C#") ||
+        (activeFilter === "OpenGL" && proj.category === "OpenGL");
+
+      return matchesSearch && matchesFilter;
+    });
+
+    // Fade out → swap → fade in
+    listContainer.classList.add("list-fading");
+    setTimeout(() => {
+      applyResults(filtered);
+      listContainer.classList.remove("list-fading");
+    }, 200);
   }
 
   // Bind input search
@@ -300,16 +366,30 @@
   });
 
   // Bind filter pills click
-  filterButtons.forEach(btn => {
+  filterButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       // Toggle active states
-      filterButtons.forEach(b => {
-        b.classList.remove("active", "border-white/10", "bg-white/5", "text-white");
+      filterButtons.forEach((b) => {
+        b.classList.remove(
+          "active",
+          "border-white/10",
+          "bg-white/5",
+          "text-white",
+        );
         b.classList.add("border-white/5", "bg-transparent", "text-neutral-400");
       });
 
-      btn.classList.add("active", "border-white/10", "bg-white/5", "text-white");
-      btn.classList.remove("border-white/5", "bg-transparent", "text-neutral-400");
+      btn.classList.add(
+        "active",
+        "border-white/10",
+        "bg-white/5",
+        "text-white",
+      );
+      btn.classList.remove(
+        "border-white/5",
+        "bg-transparent",
+        "text-neutral-400",
+      );
 
       activeFilter = btn.getAttribute("data-filter") || "all";
       renderProjects();
@@ -317,16 +397,25 @@
   });
 
   // Initial render
-  window.addEventListener('DOMContentLoaded', () => {
+  window.addEventListener("DOMContentLoaded", () => {
     renderProjects();
   });
 </script>
 
 <style>
-  /* Styling of the search pills matching OLED aesthetic */
   .filter-pill.active {
     border-color: rgba(139, 92, 246, 0.4);
     background-color: rgba(139, 92, 246, 0.1);
     color: #a78bfa;
+  }
+
+  /* Smooth fade transition when list updates */
+  #projects-list {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  #projects-list.list-fading {
+    opacity: 0;
+    transform: translateY(6px);
   }
 </style>

@@ -1,6 +1,7 @@
 ---
 import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
 import ButtonIsland from "./ui/ButtonIsland.astro";
+import { Mail, MapPin, ExternalLink, Check } from "@lucide/astro";
 ---
 
 <section
@@ -46,19 +47,7 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
             <span
               class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
             >
-              <svg
-                class="h-4 w-4 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                ></path>
-              </svg>
+              <Mail class="h-4 w-4 stroke-current" strokeWidth="1.5" />
             </span>
             <span>franklinbacacampos@gmail.com</span>
           </div>
@@ -66,24 +55,7 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
             <span
               class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
             >
-              <svg
-                class="h-4 w-4 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                ></path>
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="1.5"
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-              </svg>
+              <MapPin class="h-4 w-4 stroke-current" strokeWidth="1.5" />
             </span>
             <span>Lima, Perú</span>
           </div>
@@ -99,19 +71,10 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
           class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
         >
           <span class="text-xs font-mono font-medium">LinkedIn</span>
-          <svg
+          <ExternalLink
             class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            ></path>
-          </svg>
+            strokeWidth="2"
+          />
         </a>
         <a
           href="https://github.com/break-dev"
@@ -120,19 +83,10 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
           class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
         >
           <span class="text-xs font-mono font-medium">GitHub</span>
-          <svg
+          <ExternalLink
             class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            ></path>
-          </svg>
+            strokeWidth="2"
+          />
         </a>
         <a
           href="https://www.instagram.com/breakcito.dev/"
@@ -141,19 +95,10 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
           class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
         >
           <span class="text-xs font-mono font-medium">Instagram</span>
-          <svg
+          <ExternalLink
             class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            ></path>
-          </svg>
+            strokeWidth="2"
+          />
         </a>
         <a
           href="https://www.facebook.com/fkjdotcom/"
@@ -162,19 +107,10 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
           class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
         >
           <span class="text-xs font-mono font-medium">Facebook</span>
-          <svg
+          <ExternalLink
             class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
-            fill="none"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-            ></path>
-          </svg>
+            strokeWidth="2"
+          />
         </a>
       </div>
     </div>
@@ -263,18 +199,7 @@ import ButtonIsland from "./ui/ButtonIsland.astro";
             <div
               class="h-16 w-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center"
             >
-              <svg
-                class="h-8 w-8 stroke-current"
-                fill="none"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M5 13l4 4L19 7"></path>
-              </svg>
+              <Check class="h-8 w-8 stroke-current" strokeWidth="2" />
             </div>
 
             <div class="space-y-2 max-w-sm">
