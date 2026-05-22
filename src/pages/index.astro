@@ -1,11 +1,52 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import AboutMe from "../components/AboutMe.astro";
+import ProjectsBento from "../components/ProjectsBento.astro";
+import ProjectsList from "../components/ProjectsList.astro";
+import ContactForm from "../components/ContactForm.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <Layout>
-	<Welcome />
+  <!-- Floating Glass Navigation Island -->
+  <header
+    class="fixed top-6 left-1/2 -translate-x-1/2 z-40 glass-panel rounded-full px-6 py-2.5 flex items-center justify-between gap-12 max-w-xl w-[calc(100vw-2.5rem)] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-white/15"
+  >
+    <a
+      href="#"
+      class="text-sm font-bold tracking-tight text-white hover:text-neutral-300 transition-colors font-heading"
+    >
+      break<span class="text-emerald-400">.dev</span>
+    </a>
+
+    <nav class="flex items-center gap-6 md:gap-8">
+      <a
+        href="#sobre-mi"
+        class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors"
+        >Sobre Mí</a
+      >
+      <a
+        href="#proyectos"
+        class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors"
+        >Proyectos</a
+      >
+      <a
+        href="#contacto"
+        class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors"
+        >Contacto</a
+      >
+    </nav>
+  </header>
+
+  <!-- Main Sections Content -->
+  <main class="relative z-10 pt-4">
+    <Hero />
+    <AboutMe />
+    <ProjectsBento />
+    <ProjectsList />
+    <ContactForm />
+  </main>
+
+  <Footer />
 </Layout>

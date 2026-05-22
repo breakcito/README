@@ -1,0 +1,392 @@
+---
+import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
+import ButtonIsland from "./ui/ButtonIsland.astro";
+---
+
+<section
+  id="contacto"
+  class="relative max-w-7xl mx-auto py-24 md:py-36 px-6 md:px-12 border-t border-white/5"
+>
+  <!-- Subtle Background Accent -->
+  <div class="absolute inset-0 -z-20 opacity-20 pointer-events-none">
+    <div
+      class="absolute bottom-0 right-[10%] h-[30vw] w-[30vw] rounded-full bg-violet-900/10 blur-[100px]"
+    >
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+    <!-- Left Column: Context & Direct Links -->
+    <div
+      class="lg:col-span-5 space-y-8 scroll-reveal flex flex-col justify-between"
+    >
+      <div class="space-y-6">
+        <span
+          class="text-xs uppercase tracking-[0.2em] font-medium text-violet-400 font-mono"
+          >Conexión</span
+        >
+        <h2
+          class="text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight"
+        >
+          Hablemos de tu <br />
+          <span
+            class="text-transparent bg-clip-text bg-linear-to-r from-violet-400 via-neutral-200 to-emerald-400"
+            >próximo sistema</span
+          >
+        </h2>
+
+        <p class="text-neutral-300 font-light leading-relaxed">
+          Si buscas a alguien que entienda el valor del negocio, evite la
+          sobreingeniería y se enfoque en construir código duradero y legible,
+          escríbeme. Respondo rápido y voy directo al grano.
+        </p>
+
+        <div class="space-y-4 pt-4">
+          <div class="flex items-center gap-3 text-sm text-neutral-300">
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
+            >
+              <svg
+                class="h-4 w-4 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+            </span>
+            <span>franklinbacacampos@gmail.com</span>
+          </div>
+          <div class="flex items-center gap-3 text-sm text-neutral-300">
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
+            >
+              <svg
+                class="h-4 w-4 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.5"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+            </span>
+            <span>Lima, Perú</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Quick Grid -->
+      <div class="grid grid-cols-2 gap-4 pt-8 border-t border-white/5">
+        <a
+          href="https://www.linkedin.com/in/franklinbacacampos/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
+        >
+          <span class="text-xs font-mono font-medium">LinkedIn</span>
+          <svg
+            class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="https://github.com/break-dev"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
+        >
+          <span class="text-xs font-mono font-medium">GitHub</span>
+          <svg
+            class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="https://www.instagram.com/breakcito.dev/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
+        >
+          <span class="text-xs font-mono font-medium">Instagram</span>
+          <svg
+            class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </a>
+        <a
+          href="https://www.facebook.com/fkjdotcom/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center justify-between p-3.5 rounded-2xl bg-white/2 border border-white/5 hover:border-white/10 hover:bg-white/4 transition-all text-neutral-300 hover:text-white group"
+        >
+          <span class="text-xs font-mono font-medium">Facebook</span>
+          <svg
+            class="h-4 w-4 stroke-current text-neutral-500 group-hover:text-white transition-colors"
+            fill="none"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+            ></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Form in Card -->
+    <div class="lg:col-span-7 scroll-reveal">
+      <CardDoubleBezel padding="p-8 md:p-10">
+        <!-- Interactive Form State Wrapper -->
+        <div
+          id="contact-form-wrapper"
+          class="relative min-h-[350px] flex flex-col justify-center"
+        >
+          <!-- FORM STATE: Active -->
+          <form
+            id="contact-form"
+            class="space-y-6 transition-opacity duration-500"
+          >
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              <!-- Name Input -->
+              <div class="space-y-2">
+                <label
+                  for="form-name"
+                  class="text-xs font-mono uppercase tracking-wider text-neutral-400"
+                  >Nombre</label
+                >
+                <input
+                  type="text"
+                  id="form-name"
+                  required
+                  placeholder="Tu nombre o empresa"
+                  class="w-full bg-white/2 border border-white/10 rounded-2xl px-5 py-4 text-sm text-white focus:outline-none focus:border-violet-500 focus:bg-white/4 transition-all placeholder:text-neutral-600 font-light"
+                />
+              </div>
+
+              <!-- Email Input -->
+              <div class="space-y-2">
+                <label
+                  for="form-email"
+                  class="text-xs font-mono uppercase tracking-wider text-neutral-400"
+                  >Correo</label
+                >
+                <input
+                  type="email"
+                  id="form-email"
+                  required
+                  placeholder="nombre@correo.com"
+                  class="w-full bg-white/2 border border-white/10 rounded-2xl px-5 py-4 text-sm text-white focus:outline-none focus:border-violet-500 focus:bg-white/4 transition-all placeholder:text-neutral-600 font-light"
+                />
+              </div>
+            </div>
+
+            <!-- Message Input -->
+            <div class="space-y-2">
+              <label
+                for="form-message"
+                class="text-xs font-mono uppercase tracking-wider text-neutral-400"
+                >Mensaje</label
+              >
+              <textarea
+                id="form-message"
+                rows="5"
+                required
+                placeholder="Cuéntame sobre tu proyecto, objetivos, plazos..."
+                class="w-full bg-white/2 border border-white/10 rounded-2xl px-5 py-4 text-sm text-white focus:outline-none focus:border-violet-500 focus:bg-white/4 transition-all placeholder:text-neutral-600 font-light resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Action buttons -->
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-4 border-t border-white/5"
+            >
+              <span class="text-xs text-neutral-500 font-mono leading-relaxed">
+                Listo para enviar por correo o WhatsApp.
+              </span>
+              <ButtonIsland type="submit" variant="primary" arrow={true}>
+                Enviar Mensaje
+              </ButtonIsland>
+            </div>
+          </form>
+
+          <!-- FORM STATE: Success -->
+          <div
+            id="contact-success"
+            class="absolute inset-0 flex flex-col justify-center items-center text-center space-y-6 opacity-0 transition-opacity duration-500 pointer-events-none"
+          >
+            <div
+              class="h-16 w-16 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center"
+            >
+              <svg
+                class="h-8 w-8 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+
+            <div class="space-y-2 max-w-sm">
+              <h3 class="text-2xl font-bold text-white tracking-tight">
+                ¡Mensaje preparado!
+              </h3>
+              <p class="text-neutral-400 text-sm font-light">
+                Puedes enviar el mensaje directamente a mi correo o usar un
+                enlace pre-rellenado para escribirme por WhatsApp al instante.
+              </p>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3 w-full max-w-md pt-4">
+              <a
+                id="success-whatsapp"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-emerald-600 text-white font-medium text-xs py-3.5 hover:bg-emerald-500 active:scale-95 transition-all shadow-[0_4px_15px_rgba(16,185,129,0.2)]"
+              >
+                Enviar por WhatsApp
+              </a>
+              <a
+                id="success-email"
+                href="#"
+                class="flex-1 inline-flex items-center justify-center gap-2 rounded-full bg-neutral-900 border border-white/10 text-white font-medium text-xs py-3.5 hover:bg-neutral-800 active:scale-95 transition-all"
+              >
+                Enviar por Correo
+              </a>
+            </div>
+
+            <button
+              id="success-reset"
+              class="text-xs text-neutral-500 hover:text-neutral-300 font-mono underline transition-colors pt-2 cursor-pointer pointer-events-auto"
+            >
+              Volver a escribir
+            </button>
+          </div>
+        </div>
+      </CardDoubleBezel>
+    </div>
+  </div>
+</section>
+
+<!-- Client Script to handle dynamic transitions and prefilled links -->
+<script>
+  const form = document.getElementById("contact-form") as HTMLFormElement;
+  const successState = document.getElementById("contact-success");
+  const formState = document.getElementById("contact-form");
+  const btnReset = document.getElementById("success-reset");
+
+  const linkWhatsApp = document.getElementById(
+    "success-whatsapp",
+  ) as HTMLAnchorElement;
+  const linkEmail = document.getElementById(
+    "success-email",
+  ) as HTMLAnchorElement;
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = (document.getElementById("form-name") as HTMLInputElement)
+      .value;
+    const email = (document.getElementById("form-email") as HTMLInputElement)
+      .value;
+    const message = (
+      document.getElementById("form-message") as HTMLTextAreaElement
+    ).value;
+
+    // Prefill coordinates
+    const waPhone = "51999999999"; // Default Peruvian test phone or mock
+    const waText = encodeURIComponent(
+      `Hola Franklin, mi nombre es ${name} (${email}).\n\n${message}`,
+    );
+    const emailSubject = encodeURIComponent(`Contacto Portafolio — ${name}`);
+    const emailBody = encodeURIComponent(
+      `Nombre: ${name}\nCorreo: ${email}\n\nMensaje:\n${message}`,
+    );
+
+    if (linkWhatsApp) {
+      linkWhatsApp.href = `https://wa.me/${waPhone}?text=${waText}`;
+    }
+    if (linkEmail) {
+      linkEmail.href = `mailto:franklinbacacampos@gmail.com?subject=${emailSubject}&body=${emailBody}`;
+    }
+
+    // Smooth transition
+    if (formState && successState) {
+      formState.classList.add("opacity-0", "pointer-events-none");
+      setTimeout(() => {
+        formState.classList.add("hidden");
+        successState.classList.remove("hidden", "pointer-events-none");
+        setTimeout(() => {
+          successState.classList.add("opacity-100");
+        }, 50);
+      }, 500);
+    }
+  });
+
+  btnReset?.addEventListener("click", () => {
+    if (formState && successState) {
+      successState.classList.remove("opacity-100");
+      successState.classList.add("pointer-events-none");
+      setTimeout(() => {
+        successState.classList.add("hidden");
+        formState.classList.remove(
+          "hidden",
+          "opacity-0",
+          "pointer-events-none",
+        );
+        form.reset();
+      }, 500);
+    }
+  });
+</script>

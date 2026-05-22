@@ -1,0 +1,30 @@
+---
+interface Props {
+  class?: string;
+  innerClass?: string;
+  padding?: string;
+}
+
+const {
+  class: className = "",
+  innerClass = "",
+  padding = "p-6 md:p-8",
+} = Astro.props;
+---
+
+<div
+  class={`group relative rounded-4xl bg-white/2 border border-white/5 p-2 transition-all duration-700 ease-fluid ${className}`}
+>
+  <!-- Glowing subtle backdrop glow on hover -->
+  <div
+    class="absolute inset-0 -z-10 rounded-4xl bg-linear-to-tr from-white/2 to-transparent opacity-0 transition-opacity duration-700 ease-fluid group-hover:opacity-100"
+  >
+  </div>
+
+  <!-- Inner Core -->
+  <div
+    class={`h-full w-full rounded-3xl bg-[#0d0d0f]/90 border border-white/4 shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] transition-all duration-700 ease-fluid ${padding} ${innerClass}`}
+  >
+    <slot />
+  </div>
+</div>

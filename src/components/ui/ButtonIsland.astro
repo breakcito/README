@@ -1,0 +1,86 @@
+---
+interface Props {
+  href?: string;
+  target?: string;
+  type?: "button" | "submit" | "reset";
+  class?: string;
+  variant?: "primary" | "secondary" | "subtle";
+  arrow?: boolean;
+}
+
+const {
+  href,
+  target,
+  type = "button",
+  class: className = "",
+  variant = "primary",
+  arrow = false,
+} = Astro.props;
+
+// Base styles matching modern sleek aesthetic
+const baseStyles =
+  "group inline-flex items-center justify-between rounded-full font-medium text-sm transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] cursor-pointer outline-none select-none";
+
+const variants = {
+  primary:
+    "bg-white text-black hover:bg-neutral-100 shadow-[0_4px_20px_rgba(255,255,255,0.08)]",
+  secondary:
+    "bg-neutral-900 text-white border border-white/10 hover:bg-neutral-800 hover:border-white/20",
+  subtle: "bg-transparent text-neutral-400 hover:text-white",
+};
+
+// Check padding changes based on whether there is an arrow to host
+const padding = arrow ? "pl-6 pr-2.5 py-2.5" : "px-6 py-3.5";
+
+const elementClass = `${baseStyles} ${variants[variant]} ${padding} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} target={target} class={elementClass}>
+      <span class="mr-3 font-medium tracking-wide">
+        <slot />
+      </span>
+      {arrow && (
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 dark:bg-white/10 transition-all duration-500 ease-fluid group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-105">
+          <svg
+            class="h-4 w-4 stroke-current"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      )}
+    </a>
+  ) : (
+    <button type={type} class={elementClass}>
+      <span class="mr-3 font-medium tracking-wide">
+        <slot />
+      </span>
+      {arrow && (
+        <span class="flex h-8 w-8 items-center justify-center rounded-full bg-black/10 dark:bg-white/10 transition-all duration-500 ease-fluid group-hover:translate-x-1 group-hover:-translate-y-1 group-hover:scale-105">
+          <svg
+            class="h-4 w-4 stroke-current"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7 17L17 7M17 7H7M17 7V17"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      )}
+    </button>
+  )
+}

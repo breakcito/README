@@ -1,0 +1,493 @@
+---
+import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
+import ButtonIsland from "./ui/ButtonIsland.astro";
+---
+
+<section
+  id="proyectos"
+  class="relative max-w-7xl mx-auto py-24 md:py-36 px-6 md:px-12 border-t border-white/5"
+>
+  <!-- Header of the Section -->
+  <div class="max-w-3xl mb-16 md:mb-24 space-y-4 scroll-reveal">
+    <span
+      class="text-xs uppercase tracking-[0.2em] font-medium text-blue-400 font-mono"
+      >Proyectos Destacados</span
+    >
+    <h2
+      class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight"
+    >
+      Sistemas que resuelven <br />
+      <span
+        class="text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-neutral-100 to-violet-400"
+        >problemas de negocio</span
+      >
+    </h2>
+    <p class="text-neutral-300 font-light md:text-lg leading-relaxed max-w-2xl">
+      Diseño lógico y arquitectura pragmática. Una selección de los desarrollos
+      más complejos que he estructurado, desde ERPs industriales hasta
+      asistentes de IA y motores gráficos de bajo nivel.
+    </p>
+  </div>
+
+  <!-- Bento Grid Layout -->
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- CARD 1: BlackSilver (ERP Minero) - Col Span 8 -->
+    <div class="lg:col-span-8 scroll-reveal">
+      <CardDoubleBezel
+        padding="p-8 md:p-10"
+        innerClass="flex flex-col justify-between h-full group/card relative overflow-hidden"
+      >
+        <!-- Accent Glow background for this card -->
+        <div
+          class="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-emerald-500/5 blur-[80px] pointer-events-none group-hover/card:bg-emerald-500/10 transition-all duration-700"
+        >
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex flex-wrap items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400"
+              >
+                <svg
+                  class="h-6 w-6 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-2xl font-bold text-white tracking-tight">
+                  BlackSilver
+                </h3>
+                <p class="text-xs text-neutral-400 font-mono">
+                  ERP Logístico Minero
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-2.5 py-1 text-[10px] font-mono rounded bg-white/5 text-neutral-300 border border-white/5"
+                >React 19</span
+              >
+              <span
+                class="px-2.5 py-1 text-[10px] font-mono rounded bg-white/5 text-neutral-300 border border-white/5"
+                >Zustand v5</span
+              >
+              <span
+                class="px-2.5 py-1 text-[10px] font-mono rounded bg-white/5 text-neutral-300 border border-white/5"
+                >Mantine v8</span
+              >
+              <span
+                class="px-2.5 py-1 text-[10px] font-mono rounded bg-white/5 text-neutral-300 border border-white/5"
+                >Laravel API</span
+              >
+            </div>
+          </div>
+
+          <p class="text-neutral-400 font-light leading-relaxed md:text-base">
+            ERP diseñado para digitalizar el ciclo de compras y distribución en
+            minería. Resuelve la discrepancia de stock mediante normalización de
+            unidades automatizada, garantiza trazabilidad total con Kardex
+            inmutable con doble saldo y blinda el proceso administrativo
+            mediante Auto-PO (órdenes de compra autogeneradas sin intervención
+            manual).
+          </p>
+
+          <!-- Key Logic Points -->
+          <div
+            class="grid grid-cols-1 md:grid-cols-3 gap-6 py-4 border-t border-b border-white/5 my-6"
+          >
+            <div class="space-y-1">
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-emerald-400"
+              >
+                Cantidad Base
+              </h4>
+              <p class="text-xs text-neutral-400">
+                Conversión de múltiples presentaciones a unidad base para evitar
+                roturas de stock.
+              </p>
+            </div>
+            <div class="space-y-1">
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-emerald-400"
+              >
+                Auditoría Inmutable
+              </h4>
+              <p class="text-xs text-neutral-400">
+                Mapeo del saldo anterior y posterior por cada movimiento del
+                Kardex, sin edición física.
+              </p>
+            </div>
+            <div class="space-y-1">
+              <h4
+                class="text-xs font-mono uppercase tracking-wider text-emerald-400"
+              >
+                Flujo Blindado
+              </h4>
+              <p class="text-xs text-neutral-400">
+                El sistema hereda cotizaciones aprobadas directamente a la PO,
+                eliminando alteraciones.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 mt-6">
+          <ButtonIsland
+            href="https://github.com/break-dev/BlackSilver"
+            variant="secondary"
+            target="_blank"
+            arrow={true}
+          >
+            Código Frontend
+          </ButtonIsland>
+          <a
+            href="https://github.com/break-dev/BlackSilverAPI"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+          >
+            Ver API Backend
+            <svg
+              class="h-3 w-3 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </CardDoubleBezel>
+    </div>
+
+    <!-- CARD 2: TinyFood (AI Nutrition) - Col Span 4 -->
+    <div class="lg:col-span-4 scroll-reveal">
+      <CardDoubleBezel
+        padding="p-8"
+        innerClass="flex flex-col justify-between h-full group/card relative overflow-hidden"
+      >
+        <div
+          class="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-violet-500/5 blur-[80px] pointer-events-none group-hover/card:bg-violet-500/10 transition-all duration-700"
+        >
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-violet-500/10 border border-violet-500/20 text-violet-400"
+              >
+                <svg
+                  class="h-6 w-6 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white tracking-tight">
+                  TinyFood
+                </h3>
+                <p class="text-xs text-neutral-400 font-mono">
+                  Nutrición & Despensa IA
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-neutral-400 font-light leading-relaxed text-sm">
+            Aplicación móvil nativa diseñada para combatir el desperdicio de
+            comida. Integra Gemini 2.0 en el backend para interpretar
+            ingredientes de la despensa y recomendar recetas dinámicas
+            optimizadas para las metas físicas y alergias del usuario.
+          </p>
+
+          <div class="pt-4 border-t border-white/5 space-y-3">
+            <div class="flex items-center gap-2 text-xs text-neutral-400">
+              <svg
+                class="h-4 w-4 text-violet-400 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Expo Router & Client-Side Cache</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-neutral-400">
+              <svg
+                class="h-4 w-4 text-violet-400 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>NestJS Backend & Prisma ORM</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-neutral-400">
+              <svg
+                class="h-4 w-4 text-violet-400 shrink-0"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 13l4 4L19 7"></path>
+              </svg>
+              <span>Gemini 2.0 & Supabase</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 mt-8 pt-4">
+          <ButtonIsland
+            href="https://github.com/break-dev/TinyFood"
+            variant="secondary"
+            target="_blank"
+            arrow={true}
+          >
+            Mobile App
+          </ButtonIsland>
+          <a
+            href="https://github.com/break-dev/TinyFoodAPI"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+          >
+            Ver API
+          </a>
+        </div>
+      </CardDoubleBezel>
+    </div>
+
+    <!-- CARD 3: Mopi (Music Downloader) - Col Span 5 -->
+    <div class="lg:col-span-5 scroll-reveal">
+      <CardDoubleBezel
+        padding="p-8"
+        innerClass="flex flex-col justify-between h-full group/card relative overflow-hidden"
+      >
+        <div
+          class="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blue-500/5 blur-[80px] pointer-events-none group-hover/card:bg-blue-500/10 transition-all duration-700"
+        >
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400"
+              >
+                <svg
+                  class="h-6 w-6 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M9 19V6l12-3v13M9 10l12-3M9 14a3 3 0 11-6 0 3 3 0 016 0zm12-4a3 3 0 11-6 0 3 3 0 016 0z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white tracking-tight">
+                  Mopi
+                </h3>
+                <p class="text-xs text-neutral-400 font-mono">
+                  YouTube & SoundCloud Player
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-neutral-400 font-light leading-relaxed text-sm">
+            Aplicación de descarga y reproducción de audio de alta fidelidad.
+            Desarrollada por una necesidad personal de mantener música local
+            para mezclas de DJ. Utiliza FastAPI para descargas concurrentes de
+            alta velocidad y React para un reproductor de interfaz fluida y sin
+            comerciales.
+          </p>
+
+          <div class="pt-4 border-t border-white/5 space-y-2">
+            <div class="text-xs text-neutral-400 flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+              <span>FastAPI backend con extracción asíncrona de streams</span>
+            </div>
+            <div class="text-xs text-neutral-400 flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+              <span>Arquitectura ligera Dockerizada</span>
+            </div>
+            <div class="text-xs text-neutral-400 flex items-center gap-2">
+              <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
+              <span>PWA optimizada para dispositivos móviles</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 mt-8 pt-4">
+          <ButtonIsland
+            href="https://github.com/break-dev/Mopi"
+            variant="secondary"
+            target="_blank"
+            arrow={true}
+          >
+            Frontend
+          </ButtonIsland>
+          <a
+            href="https://github.com/break-dev/MopiAPI"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+          >
+            Ver API
+            <svg
+              class="h-3 w-3 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              ></path>
+            </svg>
+          </a>
+        </div>
+      </CardDoubleBezel>
+    </div>
+
+    <!-- CARD 4: Low-Level / Desktop Versatility - Col Span 7 -->
+    <div class="lg:col-span-7 scroll-reveal">
+      <CardDoubleBezel
+        padding="p-8"
+        innerClass="flex flex-col justify-between h-full group/card relative overflow-hidden"
+      >
+        <div
+          class="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-neutral-400/5 blur-[80px] pointer-events-none group-hover/card:bg-neutral-400/10 transition-all duration-700"
+        >
+        </div>
+
+        <div class="space-y-6">
+          <div class="flex items-center justify-between gap-4">
+            <div class="flex items-center gap-3">
+              <div
+                class="flex h-12 w-12 items-center justify-center rounded-xl bg-neutral-400/10 border border-neutral-400/20 text-neutral-300"
+              >
+                <svg
+                  class="h-6 w-6 stroke-current"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.5"
+                    d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                  ></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white tracking-tight">
+                  Sistemas, Gráficos & Escritorio
+                </h3>
+                <p class="text-xs text-neutral-400 font-mono">C++, C# & WPF</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="text-neutral-400 font-light leading-relaxed text-sm">
+            Aunque paso gran parte de mi tiempo construyendo aplicaciones web
+            modulares y ERPs, mantengo una sólida base técnica en lenguajes
+            estructurados y de bajo nivel. Esto me permite escribir soluciones
+            robustas de escritorio y entender qué pasa a nivel de memoria y
+            procesamiento gráfico.
+          </p>
+
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/5"
+          >
+            <div class="space-y-1">
+              <span class="text-xs font-semibold text-white"
+                >BobitoEsponja (C++ / OpenGL)</span
+              >
+              <p class="text-[12px] text-neutral-500">
+                Recreación interactiva 3D de Fondo de Bikini. Desarrollé el
+                renderizado del entorno (isla, física del agua, palmeras y arena
+                en shaders).
+              </p>
+            </div>
+            <div class="space-y-1">
+              <span class="text-xs font-semibold text-white"
+                >Planbie / SnackFlow (C# WPF)</span
+              >
+              <p class="text-[12px] text-neutral-500">
+                Software para monitoreo de cultivos en tiempo real con
+                integración IoT y convertidor masivo de imágenes digitales a
+                arte ASCII.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-4 mt-8 pt-4">
+          <ButtonIsland
+            href="https://github.com/break-dev/Planbie"
+            target="_blank"
+            variant="secondary"
+            arrow={true}
+          >
+            Ver Planbie (.NET)
+          </ButtonIsland>
+          <a
+            href="https://github.com/break-dev/BobitoEsponja"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
+          >
+            Ver C++ OpenGL
+          </a>
+        </div>
+      </CardDoubleBezel>
+    </div>
+  </div>
+</section>

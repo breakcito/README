@@ -1,0 +1,211 @@
+---
+import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
+---
+
+<section
+  id="sobre-mi"
+  class="relative max-w-7xl mx-auto py-24 md:py-40 px-6 md:px-12 overflow-hidden border-t border-white/5"
+>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+    <!-- Left Column: The Narrative (Editorial Style) -->
+    <div class="lg:col-span-7 space-y-10 scroll-reveal">
+      <div class="space-y-4">
+        <span
+          class="text-xs uppercase tracking-[0.2em] font-medium text-emerald-400"
+          >Quién soy</span
+        >
+        <h2 class="text-4xl md:text-5xl font-bold tracking-tight">
+          Más allá de la terminal
+        </h2>
+      </div>
+
+      <div
+        class="space-y-6 text-neutral-300 font-light leading-relaxed md:text-lg"
+      >
+        <p>
+          Mi curiosidad por el software comenzó a los 9 años, cuando mi mamá
+          compró a crédito nuestra primera computadora Gigabyte. Mientras jugaba
+          Operation7, en los respawns me preguntaba: <strong
+            >¿cómo funciona este mundo dentro de un rectángulo? ¿Tiene
+            conciencia? ¿Cómo me obedece?</strong
+          > Crecí no con las ganas de crear juegos, sino con la obsesión de entender
+          cómo se construían.
+        </p>
+        <p>
+          Hoy en día, entiendo el desarrollo como un balance entre la <strong
+            >lógica abstracta</strong
+          > (el valor real para el usuario) y la <strong
+            >lógica de programación</strong
+          > (el motor que lo hace posible). No sigo modas ni patrones a ciegas. Creo
+          que las reglas como SOLID son guías que debes adaptar a la necesidad del
+          producto, y que una arquitectura robusta no siempre es la mejor decisión
+          si no se entienden los objetivos reales.
+        </p>
+        <p>
+          Cuando no estoy programando, estoy inmerso en mis otras pasiones: la <strong
+            >música electrónica</strong
+          > (llevo tres años aprendiendo a mezclar y pinchar) y la <strong
+            >producción audiovisual</strong
+          >. Recientemente ahorré para comprar mi cámara, una Sony ZV-E10 II,
+          con la que busco capturar el mundo y, algún día, producir proyectos
+          donde el audio y el video logren una armonía exquisita.
+        </p>
+      </div>
+
+      <!-- Core Pillars -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
+        <div class="border-l-2 border-white/10 pl-4 space-y-2">
+          <h3 class="text-white font-medium">Control y Legibilidad</h3>
+          <p class="text-sm text-neutral-300">
+            Código limpio que cualquiera pueda depurar y mantener sin dolores de
+            cabeza.
+          </p>
+        </div>
+        <div class="border-l-2 border-white/10 pl-4 space-y-2">
+          <h3 class="text-white font-medium">Pragmatismo Operativo</h3>
+          <p class="text-sm text-neutral-300">
+            Entender el negocio antes de escribir la primera línea de código.
+          </p>
+        </div>
+        <div class="border-l-2 border-white/10 pl-4 space-y-2">
+          <h3 class="text-white font-medium">Ciberseguridad</h3>
+          <p class="text-sm text-neutral-300">
+            Interés profundo en auditoría y seguridad ofensiva/defensiva.
+          </p>
+        </div>
+        <div class="border-l-2 border-white/10 pl-4 space-y-2">
+          <h3 class="text-white font-medium">Consumo Masivo</h3>
+          <p class="text-sm text-neutral-300">
+            Atracción por la escalabilidad en e-commerce, redes sociales y SaaS.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column: Interactive Double-Bezel Elements -->
+    <div class="lg:col-span-5 space-y-6 scroll-reveal lg:mt-10">
+      <!-- Card 1: Gigabyte & Operation7 -->
+      <CardDoubleBezel padding="p-6">
+        <div class="flex items-start gap-4">
+          <div class="text-emerald-400 mt-1">
+            <svg
+              class="h-6 w-6 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+              ></path>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <span
+              class="text-[10px] uppercase tracking-wider text-neutral-400 font-mono"
+              >El origen (2013)</span
+            >
+            <h4 class="text-white font-semibold">Computadora Gigabyte</h4>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              El equipo a crédito que sembró la duda de cómo funcionaba la
+              interfaz y los mundos virtuales de Operation7.
+            </p>
+          </div>
+        </div>
+      </CardDoubleBezel>
+
+      <!-- Card 2: Music Production / Mixing -->
+      <CardDoubleBezel padding="p-6">
+        <div class="flex items-start gap-4">
+          <div class="text-violet-400 mt-1">
+            <svg
+              class="h-6 w-6 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M9 19V6l12-3v13M9 10l12-3M9 14a3 3 0 11-6 0 3 3 0 016 0zm12-4a3 3 0 11-6 0 3 3 0 016 0z"
+              ></path>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <span
+              class="text-[10px] uppercase tracking-wider text-neutral-400 font-mono"
+              >BPM & House</span
+            >
+            <h4 class="text-white font-semibold">Dj & Mezcla de Música</h4>
+            <p class="text-xs text-neutral-400 leading-relaxed mb-2">
+              Influenciado por mi hermano (productor) y mi madre (cantante en su juventud), amo
+              pinchar house y tech house.
+            </p>
+            <a
+              href="https://open.spotify.com/artist/39mhckWRpOlpVUEjU7KEXE?si=EGbK8fE_QBeA73VjE-UgVw"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs text-violet-400 hover:text-violet-300 transition-colors"
+            >
+              Escuchar producciones de mi hermano
+              <svg
+                class="h-3.5 w-3.5 stroke-current"
+                fill="none"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </CardDoubleBezel>
+
+      <!-- Card 3: Sony ZV-E10 II -->
+      <CardDoubleBezel padding="p-6">
+        <div class="flex items-start gap-4">
+          <div class="text-blue-400 mt-1">
+            <svg
+              class="h-6 w-6 stroke-current"
+              fill="none"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"
+              ></path>
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <div class="space-y-2">
+            <span
+              class="text-[10px] uppercase tracking-wider text-neutral-400 font-mono"
+              >Sony ZV-E10 II</span
+            >
+            <h4 class="text-white font-semibold">Producción Audiovisual</h4>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              Mi cámara comprada con mis propios ahorros. Un paso firme hacia mi
+              meta de dirigir cortos y videoclips con una experiencia estética
+              preciosa.
+            </p>
+          </div>
+        </div>
+      </CardDoubleBezel>
+    </div>
+  </div>
+</section>

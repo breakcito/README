@@ -1,23 +1,122 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+---
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Franklin Baca Campos — Ingeniero de Sistemas & Full-Stack Developer",
+  description = "Portafolio profesional de Franklin Baca Campos (break-dev).",
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="es" class="bg-bg-dark text-gray-200">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO Optimization -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Franklin Baca Campos" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body
+    class="relative min-h-dvh w-full selection:bg-white/20 selection:text-white antialiased"
+  >
+    <!-- Cine/Film Grain Overlay (Fixed & GPU optimized) -->
+    <div class="grain-overlay pointer-events-none fixed inset-0 z-0"></div>
+
+    <!-- Custom Ambient Mesh Gradients (Orbs) -->
+    <div class="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
+      <!-- 1. Indigo (Top Left) -->
+      <div
+        class="absolute top-[-20%] left-[-10%] h-[70vw] w-[70vw] md:h-[50vw] md:w-[50vw] rounded-full bg-indigo-600/15 blur-[120px] animate-orb-indigo"
+      >
+      </div>
+      <!-- 2. Cyan (Bottom Left) -->
+      <div
+        class="absolute bottom-[-20%] left-[-10%] h-[60vw] w-[60vw] md:h-[45vw] md:w-[45vw] rounded-full bg-cyan-500/15 blur-[130px] animate-orb-cyan"
+      >
+      </div>
+      <!-- 3. Emerald (Center) -->
+      <div
+        class="absolute top-[20%] left-[20%] h-[50vw] w-[50vw] md:h-[35vw] md:w-[35vw] rounded-full bg-emerald-500/10 blur-[140px] animate-orb-emerald"
+      >
+      </div>
+      <!-- 4. Amber (Bottom Right) -->
+      <div
+        class="absolute bottom-[-10%] right-[-10%] h-[55vw] w-[55vw] md:h-[40vw] md:w-[40vw] rounded-full bg-amber-500/12 blur-[125px] animate-orb-amber"
+      >
+      </div>
+      <!-- 5. Fuchsia (Top Right) -->
+      <div
+        class="absolute top-[-10%] right-[-10%] h-[60vw] w-[60vw] md:h-[45vw] md:w-[45vw] rounded-full bg-fuchsia-600/15 blur-[135px] animate-orb-fuchsia"
+      >
+      </div>
+    </div>
+
+
+    <!-- Main Layout Slot -->
+    <slot />
+
+    <!-- Scroll Reveal Script -->
+    <script>
+      // Simple Intersection Observer for entry animations
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("animate-fade-up");
+            entry.target.classList.remove("opacity-0");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      // Observe elements after load
+      window.addEventListener("DOMContentLoaded", () => {
+        const scrollElements = document.querySelectorAll(".scroll-reveal");
+        scrollElements.forEach((el) => {
+          el.classList.add("opacity-0");
+          observer.observe(el);
+        });
+      });
+    </script>
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  html,
+  body {
+    margin: 0;
+    width: 100%;
+    min-height: 100dvh;
+  }
 </style>
