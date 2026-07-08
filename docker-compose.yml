@@ -1,0 +1,12 @@
+services:
+  readme:
+    image: ghcr.io/breakcito/readme:latest
+    container_name: readme
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
