@@ -61,6 +61,7 @@ jobs:
       - name: Redeploy via Portainer webhook
         run: |
           echo "Llamando webhook de Portainer..."
-          curl -fsS -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
+          # Añadimos -k para permitir el certificado autofirmado inicial
+          curl -fkSS -X POST "${{ secrets.PORTAINER_WEBHOOK_URL }}"
           echo ""
           echo "Webhook ejecutado correctamente"
