@@ -237,18 +237,16 @@ const description =
 
       async function getPdfMake() {
         // @ts-ignore
-        if (!window.pdfMake || !window.vfs) {
-          await Promise.all([
-            loadScript(pdfMakeUrl),
-            loadScript(vfsFontsUrl),
-          ]);
+        if (!window.pdfMake) {
+          await loadScript(pdfMakeUrl);
+        }
+        // @ts-ignore
+        if (!window.pdfMake || !window.pdfMake.vfs) {
+          await loadScript(vfsFontsUrl);
         }
         // @ts-ignore
         const pdfMake = window.pdfMake;
-        // @ts-ignore
-        const vfs = window.vfs;
         if (!pdfMake) throw new Error("pdfMake no se cargó");
-        if (!pdfMake.vfs && vfs) pdfMake.vfs = vfs;
         return pdfMake;
       }
 
