@@ -1,5 +1,6 @@
 ---
 import ButtonIsland from "./ui/ButtonIsland.astro";
+import { Download } from "@lucide/astro";
 import profileImage from "../assets/hap.jpg";
 ---
 
@@ -61,7 +62,19 @@ import profileImage from "../assets/hap.jpg";
         <ButtonIsland href="#sobre-mi" variant="secondary">
           Quién Soy
         </ButtonIsland>
-        <ButtonIsland href="#contacto" variant="subtle">Contacto</ButtonIsland>
+        <a
+          href="/cv"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group inline-flex items-center gap-2 rounded-full font-medium text-sm px-6 py-3.5 bg-transparent text-neutral-300 hover:text-white transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] active:scale-[0.97] cursor-pointer outline-none select-none"
+          aria-label="Descargar currículum vitae en PDF"
+        >
+          <Download
+            class="h-4 w-4 stroke-current transition-transform duration-500 ease-fluid group-hover:-translate-y-0.5"
+            strokeWidth="1.8"
+          />
+          <span class="font-medium tracking-wide">Descargar CV</span>
+        </a>
       </div>
     </div>
 

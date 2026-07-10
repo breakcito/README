@@ -4,35 +4,203 @@ import "../styles/global.css";
 interface Props {
   title?: string;
   description?: string;
+  image?: string;
+  type?: "website" | "profile" | "article";
+  canonical?: string;
 }
 
+const DEFAULT_TITLE = "Franklin Baca Campos — Software Engineer | Lima, Perú";
+const DEFAULT_DESCRIPTION =
+  "Portafolio de Franklin Baca Campos, Software Engineer en Lima, Perú. Especializado en SaaS, ERP, arquitectura modular, Laravel, React y .NET.";
+const DEFAULT_IMAGE = "/hap.jpg";
+const SITE_URL = "https://franklincampos.com";
+
 const {
-  title = "Franklin Baca Campos — Ingeniero de Sistemas & Full-Stack Developer",
-  description = "Portafolio profesional de Franklin Baca Campos (break-dev).",
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  image = DEFAULT_IMAGE,
+  type = "profile",
+  canonical,
 } = Astro.props;
+
+const canonicalUrl =
+  canonical ?? new URL(Astro.url.pathname, Astro.site ?? SITE_URL).href;
+const imageUrl = new URL(image, Astro.site ?? SITE_URL).href;
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Franklin Baca Campos",
+  alternateName: ["Franklin Baca", "Franklin Baca-Campos", "Franklin Campos"],
+  givenName: "Franklin",
+  familyName: "Baca Campos",
+  jobTitle: "Ingeniero de Software · Full-Stack Developer",
+  description: DEFAULT_DESCRIPTION,
+  url: SITE_URL,
+  image: imageUrl,
+  email: "mailto:franklinbacacampos@gmail.com",
+  telephone: "+51-941-225-240",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Trujillo",
+    addressRegion: "La Libertad",
+    addressCountry: "PE",
+  },
+  sameAs: [
+    "https://www.linkedin.com/in/franklinbacacampos/",
+    "https://github.com/breakcito",
+    "https://break-dev.github.io/README/",
+  ],
+  knowsAbout: [
+    "Software Architecture",
+    "SaaS",
+    "Enterprise Resource Planning",
+    "Laravel",
+    "React",
+    "FastAPI",
+    "NestJS",
+    ".NET",
+    "Spring Boot",
+    "SQL Server",
+    "PostgreSQL",
+    "MySQL",
+    "MongoDB",
+    "DevOps",
+    "CI/CD",
+    "Clean Architecture",
+    "Vertical Slice Architecture",
+    "ETL",
+    "Internet of Things",
+    "Cybersecurity",
+  ],
+  alumniOf: {
+    "@type": "CollegeOrUniversity",
+    name: "Universidad Privada del Norte",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Trujillo",
+      addressCountry: "PE",
+    },
+  },
+  worksFor: [
+    {
+      "@type": "Organization",
+      name: "Fabricaciones Fabero S.A.C",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Trujillo",
+        addressCountry: "PE",
+      },
+    },
+    {
+      "@type": "Organization",
+      name: "Consorcio Minero Black Silver S.A.C",
+      address: {
+        "@type": "PostalAddress",
+        addressLocality: "Trujillo",
+        addressCountry: "PE",
+      },
+    },
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "Franklin Baca Campos — Portafolio",
+  url: SITE_URL,
+  inLanguage: "es-PE",
+  author: {
+    "@type": "Person",
+    name: "Franklin Baca Campos",
+    url: SITE_URL,
+  },
+};
 ---
 
-<!DOCTYPE html>
-<html lang="es" class="bg-bg-dark text-gray-200">
+<!doctype html>
+<html lang="es-PE" class="bg-bg-dark text-gray-200">
   <head>
     <meta charset="UTF-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
     />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
-    <!-- SEO Optimization -->
+    <!-- Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="author" content="Franklin Baca Campos" />
+    <meta
+      name="robots"
+      content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
+    />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href={canonicalUrl} />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
+    <!-- Theme / colors -->
+    <meta name="theme-color" content="#050505" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="msapplication-TileColor" content="#050505" />
+
+    <!-- Keywords (low weight, but still useful) -->
+    <meta
+      name="keywords"
+      content="Franklin Baca Campos, Franklin Baca, Franklin Campos, breakcito, break-dev, Ingeniero de Sistemas, Full Stack Developer, Software Architect, Trujillo, Perú, SaaS, ERP, Laravel, React, .NET, Clean Architecture, Vertical Slice, desarrollador peruano, ingeniero de software Trujillo"
+    />
+
+    <!-- Geo targeting -->
+    <meta name="geo.region" content="PE-LAL" />
+    <meta name="geo.placename" content="Trujillo, Perú" />
+    <meta name="geo.position" content="-8.1116;-79.0287" />
+    <meta name="ICBM" content="-8.1116, -79.0287" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={type} />
+    <meta property="og:site_name" content="Franklin Baca Campos" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Franklin Baca Campos" />
+    <meta property="og:locale" content="es_PE" />
+    <meta property="og:locale:alternate" content="es_ES" />
+    <meta property="og:locale:alternate" content="en_US" />
+    {
+      type === "profile" && (
+        <>
+          <meta property="profile:first_name" content="Franklin" />
+          <meta property="profile:last_name" content="Baca Campos" />
+          <meta property="profile:username" content="breakcito" />
+        </>
+      )
+    }
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+    <meta name="twitter:image:alt" content="Franklin Baca Campos" />
+    <meta name="twitter:creator" content="@break_dev" />
+    <meta name="twitter:site" content="@break_dev" />
+
+    <!-- Structured Data: Person + WebSite -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(personJsonLd)}
+    />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(websiteJsonLd)}
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +244,6 @@ const {
       >
       </div>
     </div>
-
 
     <!-- Main Layout Slot -->
     <slot />

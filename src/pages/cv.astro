@@ -1,0 +1,638 @@
+---
+import "../styles/cv.css";
+
+const title = "CV — Franklin Baca Campos";
+const description =
+  "Currículum vitae de Franklin Baca Campos, Ingeniero de Sistemas y Full-Stack Developer en Trujillo, Perú.";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Franklin Baca Campos" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Action buttons -->
+    <div class="cv-actions">
+      <a href="/" aria-label="Volver al portafolio">← Portafolio</a>
+      <button id="download-pdf" class="primary" aria-label="Descargar PDF">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="7 10 12 15 17 10"></polyline>
+          <line x1="12" y1="15" x2="12" y2="3"></line>
+        </svg>
+        <span id="btn-text">Descargar PDF</span>
+      </button>
+    </div>
+
+    <main>
+      <article class="cv-sheet" id="cv-content">
+        <!-- HEADER -->
+        <header class="cv-header">
+          <div class="cv-header-text">
+            <h1>Franklin Baca Campos</h1>
+            <p class="cv-tagline">Ingeniero de Software · Full-Stack Developer</p>
+            <p class="cv-contact">
+              Trujillo, Perú &nbsp;•&nbsp; <a
+                href="mailto:franklinbacacampos@gmail.com"
+                >franklinbacacampos@gmail.com</a
+              > &nbsp;•&nbsp; +51 941 225 240 &nbsp;•&nbsp; <a
+                href="https://www.linkedin.com/in/franklinbacacampos/"
+                target="_blank"
+                rel="noopener noreferrer">linkedin</a
+              > &nbsp;•&nbsp; <a
+                href="https://github.com/breakcito"
+                target="_blank"
+                rel="noopener noreferrer">github</a
+              >
+            </p>
+          </div>
+          <img
+            id="profile-photo"
+            src="/hap.jpg"
+            alt="Franklin Baca Campos"
+            class="cv-photo"
+          />
+        </header>
+
+        <!-- RESUMEN -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Resumen</h2>
+          <p style="margin:0;font-size:9.6pt;line-height:1.35;color:#222">
+            Ingeniero de Sistemas con foco en <strong>SaaS y plataformas industriales</strong>.
+            Diseño arquitecturas modulares que aguantan operaciones reales y resuelven
+            cuellos de botella donde los datos no se pueden romper.
+          </p>
+        </section>
+
+        <!-- EXPERIENCIA -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Experiencia</h2>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Consorcio Minero Black Silver S.A.C</span>
+              <span>Mar 2026 — Actualidad</span>
+            </div>
+            <div class="cv-item-sub">
+              <em>Ingeniero de Software</em> · Trujillo, Perú
+            </div>
+            <ul class="cv-bullets">
+              <li>
+                Diseñé arquitectura modular de ERP minero: Kardex inmutable con doble
+                saldo, normalización de unidades base y Auto-PO desde cotizaciones aprobadas.
+              </li>
+              <li>
+                Modelé flujo de transferencias entre almacenes puente para entregas de
+                proveedores en sede distinta al destino final.
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Corporación Copper Cave S.A.C</span>
+              <span>Oct 2025 — May 2026</span>
+            </div>
+            <div class="cv-item-sub">
+              <em>Analista Programador</em> · Trujillo, Perú
+            </div>
+            <ul class="cv-bullets">
+              <li>
+                Diseñé y ejecuté ETL que migró 13 millones de registros históricos con
+                0% de pérdida y solo 4 horas de inactividad operativa.
+              </li>
+              <li>
+                Automaticé 6 módulos de reportes: búsqueda manual de 2 a 3 días pasó a
+                minutos.
+              </li>
+              <li>
+                Digitalicé flujos de planta: 0% de papel y 25% más rápido en tiempos
+                de respuesta operativa.
+              </li>
+            </ul>
+          </div>
+
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Micro Service Group S.A.C</span>
+              <span>Nov 2024 — Sept 2025</span>
+            </div>
+            <div class="cv-item-sub">
+              <em>Full Stack Developer</em> · Lima, Perú
+            </div>
+            <ul class="cv-bullets">
+              <li>
+                Automaticé 100% del registro y validación de facturas electrónicas con
+                API Laravel integrada directamente a SUNAT.
+              </li>
+              <li>
+                Reduje 70% los tiempos de carga en vistas React.js del ecosistema ERP/POS.
+              </li>
+              <li>
+                Diseñé pipelines de CI/CD para ERP DATCORP: pase a producción pasó de
+                2 días a minutos.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- EDUCACIÓN -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Educación</h2>
+          <div class="cv-item">
+            <div class="cv-item-header">
+              <span>Universidad Privada del Norte</span>
+              <span>Mar 2022 — Dic 2026</span>
+            </div>
+            <div class="cv-item-sub">
+              <em>Ingeniería de Sistemas Computacionales</em> · Trujillo, Perú ·
+              10mo ciclo (en curso)
+            </div>
+            <ul class="cv-bullets">
+              <li>
+                Tercio Superior de la Facultad de Ingeniería (Jul 2024) · Quinto Superior
+                (Nov 2023)
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- HABILIDADES -->
+        <section class="cv-section">
+          <h2 class="cv-section-title">Habilidades Técnicas</h2>
+          <div class="cv-grid-2">
+            <div>
+              <strong>Lenguajes:</strong> PHP, JavaScript/TypeScript, Python, C#, Java, C++, SQL
+            </div>
+            <div>
+              <strong>Frameworks:</strong> Laravel, React, Next.js, NestJS, FastAPI, .NET, Spring Boot
+            </div>
+            <div>
+              <strong>Datos:</strong> SQL Server, MySQL, MongoDB, Power BI, Pandas, Apache Spark
+            </div>
+            <div>
+              <strong>DevOps:</strong> Git, Docker, CI/CD, Clean Architecture, REST APIs, ETL
+            </div>
+            <div>
+              <strong>Certificaciones:</strong> CCNA (2025), Cybersecurity Analyst Cisco (2024), English B1 (2025)
+            </div>
+            <div>
+              <strong>Idiomas:</strong> Español (nativo), Inglés (B1)
+            </div>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      import pdfMakeUrl from "pdfmake/build/pdfmake.min.js?url";
+      import vfsFontsUrl from "pdfmake/build/vfs_fonts.js?url";
+      import QRCode from "qrcode";
+
+      const PORTFOLIO_URL = "https://franklincampos.com/";
+
+      function loadScript(src) {
+        return new Promise((resolve, reject) => {
+          const existing = document.querySelector(
+            `script[data-pdfmake-src="${src}"]`
+          );
+          if (existing) {
+            if (existing.dataset.loaded === "true") resolve();
+            else existing.addEventListener("load", resolve);
+            return;
+          }
+          const s = document.createElement("script");
+          s.src = src;
+          s.dataset.pdfmakeSrc = src;
+          s.onload = () => {
+            s.dataset.loaded = "true";
+            resolve();
+          };
+          s.onerror = reject;
+          document.head.appendChild(s);
+        });
+      }
+
+      async function getPdfMake() {
+        // @ts-ignore
+        if (!window.pdfMake || !window.vfs) {
+          await Promise.all([
+            loadScript(pdfMakeUrl),
+            loadScript(vfsFontsUrl),
+          ]);
+        }
+        // @ts-ignore
+        const pdfMake = window.pdfMake;
+        // @ts-ignore
+        const vfs = window.vfs;
+        if (!pdfMake) throw new Error("pdfMake no se cargó");
+        if (!pdfMake.vfs && vfs) pdfMake.vfs = vfs;
+        return pdfMake;
+      }
+
+      function hr() {
+        return {
+          canvas: [
+            {
+              type: "line",
+              x1: 0,
+              y1: 0,
+              x2: 515,
+              y2: 0,
+              lineWidth: 0.7,
+              lineColor: "#000",
+            },
+          ],
+          margin: [0, 1, 0, 3],
+        };
+      }
+
+      function buildDocDefinition(qrDataUrl, photoDataUrl) {
+        return {
+          pageSize: "LETTER",
+          pageMargins: [36, 36, 36, 50],
+
+          footer: function (currentPage, pageCount) {
+            return {
+              columns: [
+                {
+                  image: qrDataUrl,
+                  width: 28,
+                  margin: [36, 0, 0, 0],
+                },
+                {
+                  stack: [
+                    {
+                      text: "franklincampos.com",
+                      fontSize: 7.5,
+                      color: "#666",
+                    },
+                    {
+                      text: `Página ${currentPage} de ${pageCount}`,
+                      fontSize: 7.5,
+                      color: "#666",
+                      margin: [0, 1, 0, 0],
+                    },
+                  ],
+                  alignment: "right",
+                  margin: [0, 6, 36, 0],
+                },
+              ],
+            };
+          },
+
+          content: [
+            // Header
+            {
+              columns: [
+                {
+                  width: "*",
+                  stack: [
+                    {
+                      text: "Franklin Baca Campos",
+                      style: "name",
+                      alignment: "center",
+                    },
+                    {
+                      text: "Ingeniero de Software · Full-Stack Developer",
+                      style: "tagline",
+                      alignment: "center",
+                      margin: [0, 1, 0, 0],
+                    },
+                    {
+                      text:
+                        "Trujillo, Perú  ·  franklinbacacampos@gmail.com  ·  +51 941 225 240  ·  linkedin.com/in/franklinbacacampos  ·  github.com/breakcito",
+                      style: "contact",
+                      alignment: "center",
+                      margin: [0, 3, 0, 0],
+                    },
+                  ],
+                },
+                photoDataUrl
+                  ? {
+                      image: photoDataUrl,
+                      width: 50,
+                      height: 50,
+                      alignment: "right",
+                    }
+                  : { text: "" },
+              ],
+              margin: [0, 0, 0, 6],
+            },
+
+            hr(),
+
+            // Resumen
+            {
+              text: "RESUMEN",
+              style: "sectionTitle",
+              margin: [0, 4, 0, 3],
+            },
+            {
+              text:
+                "Ingeniero de Sistemas con foco en SaaS y plataformas industriales. Diseño arquitecturas modulares que aguantan operaciones reales y resuelven cuellos de botella donde los datos no se pueden romper.",
+              fontSize: 9.5,
+              margin: [0, 0, 0, 6],
+            },
+
+            hr(),
+
+            // Experiencia
+            {
+              text: "EXPERIENCIA",
+              style: "sectionTitle",
+              margin: [0, 4, 0, 3],
+            },
+
+            // Black Silver
+            {
+              columns: [
+                {
+                  text: [
+                    { text: "Consorcio Minero Black Silver S.A.C", bold: true },
+                  ],
+                  fontSize: 10,
+                },
+                {
+                  text: "Mar 2026 — Actualidad",
+                  alignment: "right",
+                  fontSize: 9,
+                },
+              ],
+              margin: [0, 0, 0, 1],
+            },
+            {
+              text: "Ingeniero de Software · Trujillo, Perú",
+              fontSize: 9.3,
+              italics: true,
+              margin: [0, 0, 0, 2],
+            },
+            {
+              ul: [
+                "Diseñé arquitectura modular de ERP minero: Kardex inmutable con doble saldo, normalización de unidades base y Auto-PO desde cotizaciones aprobadas.",
+                "Modelé flujo de transferencias entre almacenes puente para entregas de proveedores en sede distinta al destino final.",
+              ],
+              fontSize: 9.4,
+              margin: [0, 0, 0, 5],
+            },
+
+            // Copper Cave
+            {
+              columns: [
+                {
+                  text: [
+                    { text: "Corporación Copper Cave S.A.C", bold: true },
+                  ],
+                  fontSize: 10,
+                },
+                {
+                  text: "Oct 2025 — May 2026",
+                  alignment: "right",
+                  fontSize: 9,
+                },
+              ],
+              margin: [0, 0, 0, 1],
+            },
+            {
+              text: "Analista Programador · Trujillo, Perú",
+              fontSize: 9.3,
+              italics: true,
+              margin: [0, 0, 0, 2],
+            },
+            {
+              ul: [
+                "Diseñé y ejecuté ETL que migró 13 millones de registros históricos con 0% de pérdida y solo 4 horas de inactividad operativa.",
+                "Automaticé 6 módulos de reportes: búsqueda manual de 2 a 3 días pasó a minutos.",
+                "Digitalicé flujos de planta: 0% de papel y 25% más rápido en tiempos de respuesta operativa.",
+              ],
+              fontSize: 9.4,
+              margin: [0, 0, 0, 5],
+            },
+
+            // Micro Service Group
+            {
+              columns: [
+                { text: [{ text: "Micro Service Group S.A.C", bold: true }], fontSize: 10 },
+                {
+                  text: "Nov 2024 — Sept 2025",
+                  alignment: "right",
+                  fontSize: 9,
+                },
+              ],
+              margin: [0, 0, 0, 1],
+            },
+            {
+              text: "Full Stack Developer · Lima, Perú",
+              fontSize: 9.3,
+              italics: true,
+              margin: [0, 0, 0, 2],
+            },
+            {
+              ul: [
+                "Automaticé 100% del registro y validación de facturas electrónicas con API Laravel integrada directamente a SUNAT.",
+                "Reduje 70% los tiempos de carga en vistas React.js del ecosistema ERP/POS.",
+                "Diseñé pipelines de CI/CD para ERP DATCORP: pase a producción pasó de 2 días a minutos.",
+              ],
+              fontSize: 9.4,
+              margin: [0, 0, 0, 5],
+            },
+
+            hr(),
+
+            // Educación
+            {
+              text: "EDUCACIÓN",
+              style: "sectionTitle",
+              margin: [0, 4, 0, 3],
+            },
+            {
+              columns: [
+                {
+                  text: [
+                    { text: "Universidad Privada del Norte", bold: true },
+                  ],
+                  fontSize: 10,
+                },
+                {
+                  text: "Mar 2022 — Dic 2026",
+                  alignment: "right",
+                  fontSize: 9,
+                },
+              ],
+              margin: [0, 0, 0, 1],
+            },
+            {
+              text: "Ingeniería de Sistemas Computacionales · Trujillo, Perú · 10mo ciclo (en curso)",
+              fontSize: 9.3,
+              italics: true,
+              margin: [0, 0, 0, 2],
+            },
+            {
+              text: "Tercio Superior de la Facultad de Ingeniería (Jul 2024) · Quinto Superior (Nov 2023)",
+              fontSize: 9.3,
+              margin: [0, 0, 0, 6],
+            },
+
+            hr(),
+
+            // Habilidades
+            {
+              text: "HABILIDADES TÉCNICAS",
+              style: "sectionTitle",
+              margin: [0, 4, 0, 3],
+            },
+            {
+              columns: [
+                {
+                  width: "*",
+                  stack: [
+                    {
+                      text: [
+                        { text: "Lenguajes: ", bold: true },
+                        "PHP, JavaScript/TypeScript, Python, C#, Java, C++, SQL",
+                      ],
+                      fontSize: 9.3,
+                      margin: [0, 0, 0, 2],
+                    },
+                    {
+                      text: [
+                        { text: "Frameworks: ", bold: true },
+                        "Laravel, React, Next.js, NestJS, FastAPI, .NET, Spring Boot",
+                      ],
+                      fontSize: 9.3,
+                      margin: [0, 0, 0, 2],
+                    },
+                    {
+                      text: [
+                        { text: "Datos: ", bold: true },
+                        "SQL Server, MySQL, MongoDB, Power BI, Pandas, Apache Spark",
+                      ],
+                      fontSize: 9.3,
+                    },
+                  ],
+                },
+                {
+                  width: "*",
+                  stack: [
+                    {
+                      text: [
+                        { text: "DevOps: ", bold: true },
+                        "Git, Docker, CI/CD, Clean Architecture, REST APIs, ETL",
+                      ],
+                      fontSize: 9.3,
+                      margin: [0, 0, 0, 2],
+                    },
+                    {
+                      text: [
+                        { text: "Certificaciones: ", bold: true },
+                        "CCNA (2025), Cybersecurity Analyst Cisco (2024), English B1 (2025)",
+                      ],
+                      fontSize: 9.3,
+                      margin: [0, 0, 0, 2],
+                    },
+                    {
+                      text: [
+                        { text: "Idiomas: ", bold: true },
+                        "Español (nativo), Inglés (B1)",
+                      ],
+                      fontSize: 9.3,
+                    },
+                  ],
+                },
+              ],
+              columnGap: 10,
+            },
+          ],
+
+          styles: {
+            name: { fontSize: 20, bold: true, color: "#000" },
+            tagline: { fontSize: 10, color: "#444", italics: true },
+            contact: { fontSize: 9, color: "#333" },
+            sectionTitle: {
+              fontSize: 10,
+              bold: true,
+              alignment: "center",
+              characterSpacing: 1,
+            },
+          },
+
+          defaultStyle: {
+            font: "Roboto",
+            fontSize: 9.5,
+            lineHeight: 1.25,
+            color: "#000",
+          },
+        };
+      }
+
+      async function imageToDataUrl(src) {
+        const res = await fetch(src);
+        const blob = await res.blob();
+        return await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onloadend = () => resolve(reader.result);
+          reader.onerror = reject;
+          reader.readAsDataURL(blob);
+        });
+      }
+
+      async function generatePdf() {
+        const btn = document.getElementById("download-pdf");
+        const btnText = document.getElementById("btn-text");
+        const originalText = btnText.textContent;
+        btnText.textContent = "Generando…";
+        btn.disabled = true;
+
+        try {
+          const pdfMake = await getPdfMake();
+
+          const qrDataUrl = await QRCode.toDataURL(PORTFOLIO_URL, {
+            margin: 1,
+            width: 200,
+            errorCorrectionLevel: "M",
+            color: { dark: "#000000", light: "#FFFFFF" },
+          });
+
+          const photoDataUrl = await imageToDataUrl("/hap.jpg").catch(() => null);
+
+          const docDefinition = buildDocDefinition(qrDataUrl, photoDataUrl);
+          pdfMake
+            .createPdf(docDefinition)
+            .download("Franklin-Baca-Campos-CV.pdf");
+        } catch (err) {
+          console.error("PDF generation failed:", err);
+          alert("Hubo un error al generar el PDF. Revisa la consola.");
+        } finally {
+          btnText.textContent = originalText;
+          btn.disabled = false;
+        }
+      }
+
+      document
+        .getElementById("download-pdf")
+        ?.addEventListener("click", generatePdf);
+    </script>
+  </body>
+</html>

@@ -13,7 +13,7 @@ import Footer from "../components/Footer.astro";
 <Layout>
   <!-- Floating Glass Navigation Island -->
   <header
-    class="fixed top-6 left-1/2 -translate-x-1/2 z-40 glass-panel rounded-full px-6 py-2.5 flex items-center justify-between gap-12 max-w-2xl w-[calc(100vw-2.5rem)] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-white/15"
+    class="fixed top-6 left-1/2 -translate-x-1/2 z-40 glass-panel rounded-full px-5 md:px-6 py-2.5 flex items-center justify-between gap-4 md:gap-12 max-w-2xl w-[calc(100vw-2.5rem)] shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-500 hover:border-white/15"
   >
     <a
       href="#"
@@ -22,7 +22,8 @@ import Footer from "../components/Footer.astro";
       break<span class="text-emerald-400">.dev</span>
     </a>
 
-    <nav class="flex items-center gap-5 md:gap-7">
+    <!-- Desktop nav -->
+    <nav class="hidden md:flex items-center gap-5 lg:gap-7">
       <a
         href="#sobre-mi"
         class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors"
@@ -40,7 +41,7 @@ import Footer from "../components/Footer.astro";
       >
       <a
         href="#credenciales"
-        class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors hidden md:block"
+        class="text-[11px] uppercase tracking-wider font-mono text-neutral-400 hover:text-white transition-colors"
         >Credenciales</a
       >
       <a
@@ -49,7 +50,91 @@ import Footer from "../components/Footer.astro";
         >Contacto</a
       >
     </nav>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex items-center justify-center h-8 w-8 rounded-full text-neutral-300 hover:text-white hover:bg-white/5 transition-all"
+      aria-label="Abrir menú de navegación"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <svg
+        id="icon-open"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="stroke-current"
+      >
+        <line x1="4" y1="7" x2="20" y2="7"></line>
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <line x1="4" y1="17" x2="20" y2="17"></line>
+      </svg>
+      <svg
+        id="icon-close"
+        xmlns="http://www.w3.org/2000/svg"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="stroke-current hidden"
+      >
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
   </header>
+
+  <!-- Mobile dropdown menu -->
+  <div
+    id="mobile-menu"
+    class="md:hidden fixed top-[4.75rem] left-1/2 -translate-x-1/2 z-30 glass-panel rounded-3xl p-2 w-[calc(100vw-3rem)] max-w-xs opacity-0 scale-95 pointer-events-none transition-all duration-300 ease-fluid origin-top"
+    role="menu"
+    aria-hidden="true"
+  >
+    <nav class="flex flex-col">
+      <a
+        href="#sobre-mi"
+        class="mobile-nav-link block px-4 py-3 text-xs uppercase tracking-wider font-mono text-neutral-300 hover:text-white hover:bg-white/5 transition-colors rounded-2xl"
+        role="menuitem"
+        >Sobre Mí</a
+      >
+      <a
+        href="#experiencia"
+        class="mobile-nav-link block px-4 py-3 text-xs uppercase tracking-wider font-mono text-neutral-300 hover:text-white hover:bg-white/5 transition-colors rounded-2xl"
+        role="menuitem"
+        >Experiencia</a
+      >
+      <a
+        href="#proyectos"
+        class="mobile-nav-link block px-4 py-3 text-xs uppercase tracking-wider font-mono text-neutral-300 hover:text-white hover:bg-white/5 transition-colors rounded-2xl"
+        role="menuitem"
+        >Proyectos</a
+      >
+      <a
+        href="#credenciales"
+        class="mobile-nav-link block px-4 py-3 text-xs uppercase tracking-wider font-mono text-neutral-300 hover:text-white hover:bg-white/5 transition-colors rounded-2xl"
+        role="menuitem"
+        >Credenciales</a
+      >
+      <a
+        href="#contacto"
+        class="mobile-nav-link block px-4 py-3 text-xs uppercase tracking-wider font-mono text-neutral-300 hover:text-white hover:bg-white/5 transition-colors rounded-2xl"
+        role="menuitem"
+        >Contacto</a
+      >
+    </nav>
+  </div>
 
   <!-- Main Sections Content -->
   <main class="relative z-10 pt-4">
@@ -64,3 +149,73 @@ import Footer from "../components/Footer.astro";
 
   <Footer />
 </Layout>
+
+<script>
+  function initMobileMenu() {
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const iconOpen = document.getElementById("icon-open");
+    const iconClose = document.getElementById("icon-close");
+    if (!btn || !menu) return;
+
+    const setOpen = (open: boolean) => {
+      if (open) {
+        menu.classList.remove(
+          "opacity-0",
+          "scale-95",
+          "pointer-events-none"
+        );
+        menu.classList.add("opacity-100", "scale-100");
+        iconOpen?.classList.add("hidden");
+        iconClose?.classList.remove("hidden");
+        btn.setAttribute("aria-expanded", "true");
+        menu.setAttribute("aria-hidden", "false");
+      } else {
+        menu.classList.add(
+          "opacity-0",
+          "scale-95",
+          "pointer-events-none"
+        );
+        menu.classList.remove("opacity-100", "scale-100");
+        iconOpen?.classList.remove("hidden");
+        iconClose?.classList.add("hidden");
+        btn.setAttribute("aria-expanded", "false");
+        menu.setAttribute("aria-hidden", "true");
+      }
+    };
+
+    const isOpen = () => !menu.classList.contains("pointer-events-none");
+
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      setOpen(!isOpen());
+    });
+
+    menu.querySelectorAll(".mobile-nav-link").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isOpen()) setOpen(false);
+    });
+
+    document.addEventListener("click", (e) => {
+      const target = e.target as Node;
+      if (
+        isOpen() &&
+        !menu.contains(target) &&
+        !btn.contains(target)
+      ) {
+        setOpen(false);
+      }
+    });
+
+    // Auto-close when window resizes to desktop width
+    const mql = window.matchMedia("(min-width: 768px)");
+    mql.addEventListener("change", (e) => {
+      if (e.matches && isOpen()) setOpen(false);
+    });
+  }
+
+  initMobileMenu();
+</script>
