@@ -1,7 +1,7 @@
 ---
 import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
 import ButtonIsland from "./ui/ButtonIsland.astro";
-import { Mail, MapPin, ExternalLink, Check } from "@lucide/astro";
+import { Mail, MapPin, Phone, ExternalLink, Check } from "@lucide/astro";
 ---
 
 <section
@@ -43,14 +43,30 @@ import { Mail, MapPin, ExternalLink, Check } from "@lucide/astro";
         </p>
 
         <div class="space-y-4 pt-4">
-          <div class="flex items-center gap-3 text-sm text-neutral-300">
+          <a
+            href="mailto:franklinbacacampos@gmail.com"
+            class="flex items-center gap-3 text-sm text-neutral-300 hover:text-white transition-colors group"
+          >
             <span
-              class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400 group-hover:bg-white/10 transition-colors"
             >
               <Mail class="h-4 w-4 stroke-current" strokeWidth="1.5" />
             </span>
             <span>franklinbacacampos@gmail.com</span>
-          </div>
+          </a>
+          <a
+            href="https://wa.me/51941225240"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex items-center gap-3 text-sm text-neutral-300 hover:text-white transition-colors group"
+          >
+            <span
+              class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400 group-hover:bg-white/10 transition-colors"
+            >
+              <Phone class="h-4 w-4 stroke-current" strokeWidth="1.5" />
+            </span>
+            <span>+51 941 225 240</span>
+          </a>
           <div class="flex items-center gap-3 text-sm text-neutral-300">
             <span
               class="flex h-8 w-8 items-center justify-center rounded-full bg-white/5 text-neutral-400"
@@ -270,7 +286,7 @@ import { Mail, MapPin, ExternalLink, Check } from "@lucide/astro";
     ).value;
 
     // Prefill coordinates
-    const waPhone = "51999999999"; // Default Peruvian test phone or mock
+    const waPhone = "51941225240";
     const waText = encodeURIComponent(
       `Hola Franklin, mi nombre es ${name} (${email}).\n\n${message}`,
     );

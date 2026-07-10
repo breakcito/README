@@ -1,0 +1,211 @@
+---
+import CardDoubleBezel from "./ui/CardDoubleBezel.astro";
+import { Briefcase, MapPin } from "@lucide/astro";
+
+interface Role {
+  company: string;
+  role: string;
+  period: string;
+  location: string;
+  current?: boolean;
+  stack: string[];
+  bullets: string[];
+}
+
+const experiences: Role[] = [
+  {
+    company: "Fabricaciones Fabero S.A.C",
+    role: "Arquitecto de Software",
+    period: "Jun 2026 — Actualidad",
+    location: "Trujillo, Perú",
+    current: true,
+    stack: ["React 19", "Laravel", "Mantine v8", "Zustand v5"],
+    bullets: [
+      "Diseñé la arquitectura modular del ERP minero: Frontend React 19 + Vite y Backend Laravel, separando cada dominio en módulos independientes que comparten solo servicios globales (catálogos, archivos y navegación).",
+      "Definí el sistema de navegación dinámica por roles: el árbol de menús se arma en el backend según los permisos del usuario, evitando filtros repetidos en cada vista.",
+      "Lideré el desarrollo de los módulos de guías de despacho, recepción de mineral y control de balanza con impresión de tickets, reemplazando los registros manuales de la planta.",
+    ],
+  },
+  {
+    company: "Consorcio Minero Black Silver S.A.C",
+    role: "Ingeniero de Software",
+    period: "Mar 2026 — Actualidad",
+    location: "Trujillo, Perú",
+    current: true,
+    stack: ["React 19", "Laravel", "Mantine v8", "Zustand v5"],
+    bullets: [
+      "Resolví el problema de discrepancia de stock con un sistema de normalización de unidades base: todo movimiento se convierte automáticamente a su unidad mínima, así un proveedor vende en cajas mientras el almacén despacha en unidades sin romper el inventario.",
+      "Modelé un Kardex inmutable con doble saldo (anterior y nuevo por movimiento) para reconstruir la foto exacta del inventario en cualquier momento y bloquear ediciones manuales: cualquier corrección pasa por un documento formal de Ajuste de Stock.",
+      "Automaticé la generación de Órdenes de Compra desde cotizaciones aprobadas (Auto-PO): cuando gerencia aprueba, el sistema crea la OC heredando precios y unidades exactos, eliminando digitación manual y alteraciones post-aprobación.",
+      "Diseñé el flujo de transferencias entre almacenes puente para cuando los proveedores entregan en una sede distinta al destino final, manteniendo la trazabilidad de propiedad sin perder el rastro contable.",
+    ],
+  },
+  {
+    company: "Planta de Beneficio Beijing S.A.C.",
+    role: "Programador Full Stack",
+    period: "Dic 2025 — Actualidad",
+    location: "Trujillo, Perú",
+    current: true,
+    stack: ["PHP", "JavaScript", "MySQL"],
+    bullets: [
+      "Digitalicé el ciclo operativo de la planta con los módulos de guías de despacho, recepción de vehículos, recepción de mineral y control de balanza, eliminando los registros en papel del día a día.",
+      "Implementé el resumen diario de pesadas y los tickets físicos de balanza para que los operarios tengan un registro auditable de cada movimiento de carga.",
+      "Construí los catálogos maestros de sucursales, empresas de transporte, plantas destino y proveedores mineros como base para los flujos logísticos de la planta.",
+      "Modelé la edición y anulación de guías de primer tramo con validación de fechas, manteniendo la trazabilidad operativa sin romper el histórico.",
+    ],
+  },
+  {
+    company: "Corporación Copper Cave S.A.C",
+    role: "Analista Programador",
+    period: "Oct 2025 — May 2026",
+    location: "Trujillo, Perú",
+    stack: ["PHP", "Laravel", "React", "SQL Server", "ETL"],
+    bullets: [
+      "Digitalicé los flujos de registro de la planta (ingresos, salidas y reportes diarios): 0% de uso de papel y 25% más rápido en los tiempos de respuesta operativa.",
+      "Implementé un sistema de permisos por roles con 5 niveles de jerarquía, restringiendo nóminas y facturación exclusivamente a las gerencias autorizadas: 0 brechas de seguridad internas en toda la operación.",
+      "Diseñé y ejecuté un proceso ETL que migró 13 millones de registros históricos a la nueva base de datos, con 0% de pérdida de información y solo 4 horas de inactividad operativa.",
+      "Automaticé 6 módulos de reportes de facturación y asistencia: lo que antes tomaba 2 a 3 días de búsqueda manual, ahora se resuelve en minutos.",
+    ],
+  },
+  {
+    company: "Micro Service Group S.A.C",
+    role: "Full Stack Developer",
+    period: "Nov 2024 — Sept 2025",
+    location: "Lima, Perú",
+    stack: ["Laravel", "React.js", "SQL Server", "CI/CD"],
+    bullets: [
+      "Automaticé el 100% del registro y validación de facturas electrónicas con una API RESTful en Laravel integrada directamente con SUNAT, eliminando la carga manual de datos.",
+      "Reduje en un 70% los tiempos de carga de las vistas React.js del ecosistema ERP/POS, mejorando la fluidez operativa para los usuarios finales.",
+      "Diseñé pipelines de CI/CD para el ERP DATCORP: pasar a producción pasó de tomar 2 días a minutos, con muchos menos errores de despliegue.",
+      "Lideré la optimización de SQL Server corporativo, mejorando la velocidad de generación de reportes en un 50% mediante reescritura de consultas pesadas.",
+    ],
+  },
+  {
+    company: "ANGELS S.A.C.",
+    role: "Soporte Técnico",
+    period: "Nov 2021 — Jul 2024",
+    location: "Trujillo, Perú",
+    stack: ["Hardware", "Windows", "Móviles"],
+    bullets: [
+      "Me encargaba de la recepción, diagnóstico y reparación de PC, laptops y móviles: cambiaba componentes, pantallas, baterías y pines de carga, devolviendo equipos a funcionamiento con presupuestos claros al cliente.",
+      "Formateaba, instalaba sistemas operativos y software de uso diario, además de respaldar y migrar datos para que los clientes nunca perdieran información durante el servicio.",
+      "Daba soporte de flasheo, actualización de firmware y reseteo de fábrica para restaurar dispositivos a estado funcional cuando no había otra salida técnica.",
+    ],
+  },
+];
+---
+
+<section
+  id="experiencia"
+  class="relative max-w-7xl mx-auto py-24 md:py-36 px-6 md:px-12 border-t border-white/5"
+>
+  <!-- Section Header -->
+  <div class="max-w-3xl mb-16 md:mb-24 space-y-4 scroll-reveal">
+    <span
+      class="text-xs uppercase tracking-[0.2em] font-medium text-emerald-400 font-mono"
+      >Trayectoria</span
+    >
+    <h2
+      class="text-4xl md:text-6xl font-bold tracking-tight text-white leading-tight"
+    >
+      Dónde he estado <br />
+      <span
+        class="text-transparent bg-clip-text bg-linear-to-r from-emerald-400 via-neutral-100 to-blue-400"
+        >construyendo en serio</span
+      >
+    </h2>
+    <p class="text-neutral-300 font-light md:text-lg leading-relaxed max-w-2xl">
+      He pasado por soporte técnico, desarrollo web y arquitectura de
+      software. Cada rol me dejó una lección: entender el problema antes de
+      tirar código, y entregar un producto que la gente realmente use sin causar fricción.
+    </p>
+  </div>
+
+  <!-- Timeline -->
+  <div class="relative">
+    <!-- Vertical line (desktop) -->
+    <div
+      class="hidden md:block absolute left-30 top-0 bottom-0 w-px bg-linear-to-b from-emerald-500/40 via-white/10 to-transparent"
+    >
+    </div>
+
+    <div class="space-y-10 md:space-y-14">
+      {
+        experiences.map((exp) => (
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 scroll-reveal relative">
+            <!-- Left: Period + Location -->
+            <div class="md:col-span-3 space-y-2 md:pt-6 relative">
+              <!-- Dot on the line -->
+              <div class="hidden md:block absolute right-[-1.6rem] top-7 h-3 w-3 rounded-full bg-emerald-400 ring-4 ring-emerald-400/15 shadow-[0_0_12px_rgba(16,185,129,0.4)]" />
+
+              <div class="flex items-center gap-2 text-[11px] font-mono uppercase tracking-wider text-neutral-200">
+                {exp.current && (
+                  <span class="relative flex h-1.5 w-1.5">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                    <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500" />
+                  </span>
+                )}
+                <span class={exp.current ? "text-emerald-400" : ""}>
+                  {exp.period}
+                </span>
+              </div>
+
+              <div class="flex items-center gap-1.5 text-xs text-neutral-300">
+                <MapPin class="h-3.5 w-3.5 stroke-current" strokeWidth="1.5" />
+                <span>{exp.location}</span>
+              </div>
+            </div>
+
+            <!-- Right: Role card -->
+            <div class="md:col-span-9">
+              <CardDoubleBezel padding="p-6 md:p-8">
+                <div class="space-y-5">
+                  <!-- Header: Company + Role -->
+                  <div class="flex items-start gap-4">
+                    <div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400">
+                      <Briefcase
+                        class="h-5 w-5 stroke-current"
+                        strokeWidth="1.5"
+                      />
+                    </div>
+                    <div class="space-y-1">
+                      <h3 class="text-lg md:text-xl font-bold text-white tracking-tight">
+                        {exp.role}
+                      </h3>
+                      <p class="text-sm text-neutral-400 font-light">
+                        {exp.company}
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Tech tags -->
+                  {exp.stack.length > 0 && (
+                    <div class="flex flex-wrap gap-1.5">
+                      {exp.stack.map((tech) => (
+                        <span class="px-2 py-0.5 text-[10px] font-mono rounded bg-white/5 text-neutral-300 border border-white/5">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <!-- Bullets -->
+                  {exp.bullets.length > 0 && (
+                    <ul class="space-y-2.5 pt-2 border-t border-white/5">
+                      {exp.bullets.map((bullet) => (
+                        <li class="flex items-start gap-3 text-sm text-neutral-300 font-light leading-relaxed">
+                          <span class="mt-2 h-1 w-1 shrink-0 rounded-full bg-emerald-400" />
+                          <span>{bullet}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </CardDoubleBezel>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
