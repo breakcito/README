@@ -627,7 +627,7 @@ const description =
           const docDefinition = buildDocDefinition(qrDataUrl, photoDataUrl);
           pdfMake
             .createPdf(docDefinition)
-            .download("Franklin-Baca-Campos-CV.pdf");
+            .download("@franklin-baca-campos.pdf");
         } catch (err) {
           console.error("PDF generation failed:", err);
           alert("Hubo un error al generar el PDF. Revisa la consola.");
