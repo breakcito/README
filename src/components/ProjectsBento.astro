@@ -24,9 +24,8 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
       >
     </h2>
     <p class="text-neutral-300 font-light md:text-lg leading-relaxed max-w-2xl">
-      Diseño lógico y arquitectura pragmática. Una selección de los desarrollos
-      más complejos que he estructurado, desde ERPs industriales hasta
-      asistentes de IA y motores gráficos de bajo nivel.
+      Una selección de los proyectos que he construido. Desde sistemas
+      logísticos y aplicaciones móviles hasta herramientas propias y gráficos 3D.
     </p>
   </div>
 
@@ -83,12 +82,7 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
           </div>
 
           <p class="text-neutral-400 font-light leading-relaxed md:text-base">
-            ERP diseñado para digitalizar el ciclo de compras y distribución en
-            minería. Resuelve la discrepancia de stock mediante normalización de
-            unidades automatizada, garantiza trazabilidad total con Kardex
-            inmutable con doble saldo y blinda el proceso administrativo
-            mediante Auto-PO (órdenes de compra autogeneradas sin intervención
-            manual).
+            Sistema de compras y distribución de insumos, gestión de flota, programación de tareas y producción para minería.
           </p>
 
           <!-- Key Logic Points -->
@@ -99,33 +93,30 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
               <h4
                 class="text-xs font-mono uppercase tracking-wider text-emerald-400"
               >
-                Cantidad Base
+                RRHH
               </h4>
               <p class="text-xs text-neutral-400">
-                Conversión de múltiples presentaciones a unidad base para evitar
-                roturas de stock.
+                Gestión de contratos, adendas, horarios, asistencias, incidentes y reportes de planilla.
               </p>
             </div>
             <div class="space-y-1">
               <h4
                 class="text-xs font-mono uppercase tracking-wider text-emerald-400"
               >
-                Auditoría Inmutable
+                Gestión de Activos
               </h4>
               <p class="text-xs text-neutral-400">
-                Mapeo del saldo anterior y posterior por cada movimiento del
-                Kardex, sin edición física.
+                Registro del uso, consumo, costos y alertas de mantenimiento preventivo.
               </p>
             </div>
             <div class="space-y-1">
               <h4
                 class="text-xs font-mono uppercase tracking-wider text-emerald-400"
               >
-                Flujo Blindado
+                Producción
               </h4>
               <p class="text-xs text-neutral-400">
-                El sistema hereda cotizaciones aprobadas directamente a la PO,
-                eliminando alteraciones.
+                Tareo, extracción de mineral, análisis químicos y venta de mineral.
               </p>
             </div>
           </div>
@@ -138,7 +129,7 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
             target="_blank"
             arrow={true}
           >
-            Código Frontend
+            Ver Frontend
           </ButtonIsland>
           <a
             href="https://github.com/breakcito/BlackSilverAPI"
@@ -177,31 +168,30 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
                   TinyFood
                 </h3>
                 <p class="text-xs text-neutral-400 font-mono">
-                  Nutrición & Despensa IA
+                  React Native & NestJS
                 </p>
               </div>
             </div>
           </div>
 
           <p class="text-neutral-400 font-light leading-relaxed text-sm">
-            Aplicación móvil nativa diseñada para combatir el desperdicio de
-            comida. Integra Gemini 2.0 en el backend para interpretar
-            ingredientes de la despensa y recomendar recetas dinámicas
-            optimizadas para las metas físicas y alergias del usuario.
+            App móvil para llevar el inventario de la despensa, controlar fechas
+            de vencimiento y armar recetas con IA según los ingredientes
+            que tienes en casa, tus alergias y metas físicas.
           </p>
 
           <div class="pt-4 border-t border-white/5 space-y-3">
             <div class="flex items-center gap-2 text-xs text-neutral-400">
               <Check class="h-4 w-4 text-violet-400 shrink-0 stroke-current" strokeWidth="2" />
-              <span>Expo Router & Client-Side Cache</span>
+              <span>Módulos separados en vistas, custom hooks y servicios</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-400">
               <Check class="h-4 w-4 text-violet-400 shrink-0 stroke-current" strokeWidth="2" />
-              <span>NestJS Backend & Prisma ORM</span>
+              <span>Expo Router, Zustand, FlashList y Reanimated</span>
             </div>
             <div class="flex items-center gap-2 text-xs text-neutral-400">
               <Check class="h-4 w-4 text-violet-400 shrink-0 stroke-current" strokeWidth="2" />
-              <span>Gemini 2.0 & Supabase</span>
+              <span>WebSockets (Socket.IO) con NestJS, Prisma y Supabase</span>
             </div>
           </div>
         </div>
@@ -213,7 +203,7 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
             target="_blank"
             arrow={true}
           >
-            Mobile App
+            Ver App Móvil
           </ButtonIsland>
           <a
             href="https://github.com/breakcito/TinyFoodAPI"
@@ -222,13 +212,14 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
             class="text-xs text-neutral-400 hover:text-white transition-colors flex items-center gap-1.5 font-medium"
           >
             Ver API
+            <ExternalLink class="h-3 w-3 stroke-current" strokeWidth="2" />
           </a>
         </div>
       </CardDoubleBezel>
     </div>
 
     <!-- CARD 3: Mopi (Music Downloader) - Col Span 5 -->
-    <div class="lg:col-span-5 scroll-reveal">
+    <div class="lg:col-span-5 scroll-reveal relative bottom-14">
       <CardDoubleBezel
         padding="p-8"
         innerClass="flex flex-col justify-between h-full group/card relative overflow-hidden"
@@ -251,32 +242,31 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
                   Mopi
                 </h3>
                 <p class="text-xs text-neutral-400 font-mono">
-                  YouTube & SoundCloud Player
+                  Reproductor & Descarga Local
                 </p>
               </div>
             </div>
           </div>
 
           <p class="text-neutral-400 font-light leading-relaxed text-sm">
-            Aplicación de descarga y reproducción de audio de alta fidelidad.
-            Desarrollada por una necesidad personal de mantener música local
-            para mezclas de DJ. Utiliza FastAPI para descargas concurrentes de
-            alta velocidad y React para un reproductor de interfaz fluida y sin
-            comerciales.
+            Lo hice porque necesitaba tener música en local para mezclar sin
+            depender de internet ni anuncios. Descarga audio de YouTube y
+            SoundCloud en paralelo con FastAPI y lo reproduce desde una interfaz
+            ligera en React.
           </p>
 
           <div class="pt-4 border-t border-white/5 space-y-2">
             <div class="text-xs text-neutral-400 flex items-center gap-2">
               <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
-              <span>FastAPI backend con extracción asíncrona de streams</span>
+              <span>Extracción asíncrona de streams con FastAPI</span>
             </div>
             <div class="text-xs text-neutral-400 flex items-center gap-2">
               <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
-              <span>Arquitectura ligera Dockerizada</span>
+              <span>Contenerizado con Docker</span>
             </div>
             <div class="text-xs text-neutral-400 flex items-center gap-2">
               <span class="h-1.5 w-1.5 rounded-full bg-blue-400"></span>
-              <span>PWA optimizada para dispositivos móviles</span>
+              <span>PWA adaptable a móvil y escritorio</span>
             </div>
           </div>
         </div>
@@ -288,7 +278,7 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
             target="_blank"
             arrow={true}
           >
-            Frontend
+            Ver Frontend
           </ButtonIsland>
           <a
             href="https://github.com/breakcito/MopiAPI"
@@ -332,11 +322,9 @@ import { Layers, Lightbulb, Check, Music, Terminal, ExternalLink } from "@lucide
           </div>
 
           <p class="text-neutral-400 font-light leading-relaxed text-sm">
-            Aunque paso gran parte de mi tiempo construyendo aplicaciones web
-            modulares y ERPs, mantengo una sólida base técnica en lenguajes
-            estructurados y de bajo nivel. Esto me permite escribir soluciones
-            robustas de escritorio y entender qué pasa a nivel de memoria y
-            procesamiento gráfico.
+            Además de móvil y web, tengo base en C++, C# y escritorio .NET, que
+            es de donde aprendí a manejar memoria, hilos de lectura de hardware
+            y renderizado gráfico desde cero.
           </p>
 
           <div

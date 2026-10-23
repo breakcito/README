@@ -28,27 +28,27 @@ const experiences: Role[] = [
   },
   {
     company: "Consorcio Minero Black Silver S.A.C",
-    role: "Ingeniero de Software",
+    role: "Líder de Técnico",
     period: "Mar 2026 — Actualidad",
     location: "Trujillo, Perú",
     current: true,
-    stack: ["React 19", "Laravel", "Mantine v8", "Zustand v5"],
+    stack: ["React 19", "React Native", "Laravel", "Mantine v8", "Zustand v5"],
     bullets: [
       "Resolví el problema de discrepancia de stock con un sistema de normalización de unidades base: todo movimiento se convierte automáticamente a su unidad mínima, así un proveedor vende en cajas mientras el almacén despacha en unidades sin romper el inventario.",
-      "Modelé un Kardex inmutable con doble saldo (anterior y nuevo por movimiento) para reconstruir la foto exacta del inventario en cualquier momento y bloquear ediciones manuales: cualquier corrección pasa por un documento formal de Ajuste de Stock.",
-      "Automaticé la generación de Órdenes de Compra desde cotizaciones aprobadas (Auto-PO): cuando gerencia aprueba, el sistema crea la OC heredando precios y unidades exactos, eliminando digitación manual y alteraciones post-aprobación.",
-      "Diseñé el flujo de transferencias entre almacenes puente para cuando los proveedores entregan en una sede distinta al destino final, manteniendo la trazabilidad de propiedad sin perder el rastro contable.",
+      "Modelé un Kardex inmutable con doble saldo (anterior y nuevo por movimiento) para reconstruir el estado del inventario en cualquier momento y bloquear ediciones manuales: cualquier corrección pasa por un documento formal de Ajuste de Stock.",
+      "Automaticé la generación de Órdenes de Compra desde cotizaciones aprobadas (Auto-PO) y desarrollé una app móvil en React Native para la gestión de pedidos al almacén.",
+      "Diseñé el flujo de transferencias entre almacenes puente para cuando los proveedores entregan en una sede distinta al destino final, manteniendo la trazabilidad contable.",
     ],
   },
   {
     company: "Planta de Beneficio Beijing S.A.C.",
-    role: "Programador Full Stack",
+    role: "Desarrollador PHP",
     period: "Dic 2025 — Actualidad",
     location: "Trujillo, Perú",
     current: true,
     stack: ["PHP", "JavaScript", "MySQL"],
     bullets: [
-      "Digitalicé el ciclo operativo de la planta con los módulos de guías de despacho, recepción de vehículos, recepción de mineral y control de balanza, eliminando los registros en papel del día a día.",
+      "Digitalicé el ciclo operativo de la planta con los módulos de guías de despacho, recepción de vehículos, recepción de mineral y control de balanza, reemplazando los registros en papel del día a día.",
       "Implementé el resumen diario de pesadas y los tickets físicos de balanza para que los operarios tengan un registro auditable de cada movimiento de carga.",
       "Construí los catálogos maestros de sucursales, empresas de transporte, plantas destino y proveedores mineros como base para los flujos logísticos de la planta.",
       "Modelé la edición y anulación de guías de primer tramo con validación de fechas, manteniendo la trazabilidad operativa sin romper el histórico.",
@@ -59,12 +59,12 @@ const experiences: Role[] = [
     role: "Analista Programador",
     period: "Oct 2025 — May 2026",
     location: "Trujillo, Perú",
-    stack: ["PHP", "Laravel", "React", "SQL Server", "ETL"],
+    stack: ["PHP", "Laravel", "React", "SQL Server", "ETL", "JMeter"],
     bullets: [
-      "Digitalicé los flujos de registro de la planta (ingresos, salidas y reportes diarios): 0% de uso de papel y 25% más rápido en los tiempos de respuesta operativa.",
-      "Implementé un sistema de permisos por roles con 5 niveles de jerarquía, restringiendo nóminas y facturación exclusivamente a las gerencias autorizadas: 0 brechas de seguridad internas en toda la operación.",
-      "Diseñé y ejecuté un proceso ETL que migró 13 millones de registros históricos a la nueva base de datos, con 0% de pérdida de información y solo 4 horas de inactividad operativa.",
-      "Automaticé 6 módulos de reportes de facturación y asistencia: lo que antes tomaba 2 a 3 días de búsqueda manual, ahora se resuelve en minutos.",
+      "Digitalicé los flujos de registro de la planta (ingresos, salidas y reportes diarios), reduciendo el uso de papel y agilizando en un 25% los tiempos de respuesta operativa.",
+      "Implementé un sistema de permisos por roles con 5 niveles de jerarquía para restringir el acceso de nóminas y facturación únicamente a las áreas autorizadas.",
+      "Diseñé y ejecuté un proceso ETL que migró 13 millones de registros históricos a la nueva base de datos sin pérdida de información y con solo 4 horas de ventana operativa.",
+      "Automaticé 6 módulos de reportes de facturación y asistencia: consultas que antes tomaban de 2 a 3 días de búsqueda manual pasaron a resolverse en minutos.",
     ],
   },
   {
@@ -72,12 +72,12 @@ const experiences: Role[] = [
     role: "Full Stack Developer",
     period: "Nov 2024 — Sept 2025",
     location: "Lima, Perú",
-    stack: ["Laravel", "React.js", "SQL Server", "CI/CD"],
+    stack: ["Laravel", "React.js", "React Native", "SQL Server", "CI/CD", "Jest"],
     bullets: [
-      "Automaticé el 100% del registro y validación de facturas electrónicas con una API RESTful en Laravel integrada directamente con SUNAT, eliminando la carga manual de datos.",
-      "Reduje en un 70% los tiempos de carga de las vistas React.js del ecosistema ERP/POS, mejorando la fluidez operativa para los usuarios finales.",
-      "Diseñé pipelines de CI/CD para el ERP DATCORP: pasar a producción pasó de tomar 2 días a minutos, con muchos menos errores de despliegue.",
-      "Lideré la optimización de SQL Server corporativo, mejorando la velocidad de generación de reportes en un 50% mediante reescritura de consultas pesadas.",
+      "Automaticé el registro y validación de facturas electrónicas con una API REST en Laravel integrada directamente con SUNAT, eliminando la carga manual.",
+      "Reduje en un 70% los tiempos de carga en vistas del ecosistema ERP/POS separando componentes, optimizando el manejo de estado y validando módulos críticos con pruebas en Jest.",
+      "Diseñé pipelines de CI/CD con Git para el ERP DATCORP, reduciendo el tiempo de pase a producción de 2 días a minutos.",
+      "Optimicé consultas pesadas en SQL Server corporativo, mejorando el tiempo de generación de reportes en un 50%.",
     ],
   },
   {
@@ -115,9 +115,8 @@ const experiences: Role[] = [
       >
     </h2>
     <p class="text-neutral-300 font-light md:text-lg leading-relaxed max-w-2xl">
-      He pasado por soporte técnico, desarrollo web y arquitectura de
-      software. Cada rol me dejó una lección: entender el problema antes de
-      tirar código, y entregar un producto que la gente realmente use sin causar fricción.
+      Mi recorrido profesional desde soporte técnico hasta el desarrollo de
+      aplicaciones móviles, sistemas web y arquitectura de software.
     </p>
   </div>
 
